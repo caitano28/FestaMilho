@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestaMilho.View.CardapioPage"
+             Title="Cardápio"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
+            <SearchBar Placeholder="O que deseja comer?"  PlaceholderColor="{StaticResource FontColor}" 
+                       x:Name="BuscaCardapio" TextChanged="OnTextChanged"/>
+        </StackLayout>
+        <StackLayout Margin="10,0,0,10">
+        <ListView ItemsSource="{Binding CardapioList}" HasUnevenRows="True" HorizontalOptions="Center" x:Name="ListCarpio">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <!--<Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateCommand}">
+
+                                </TapGestureRecognizer>
+                            </Grid.GestureRecognizers>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" Orientation="Vertical"  Grid.Column="0">
+                                    <Label Text="Nome" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Nome}" TextColor="{StaticResource FontColor}" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="1">
+                                    <Label Text="Descrição" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
+                                <Label Text="{Binding Descricao}" TextColor="{StaticResource FontColor}"/>
+                                </StackLayout>
+                            <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="2">
+                                    <Label Text="Valor" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
+                                <Label Text="{Binding Valor}" TextColor="{StaticResource FontColor}" x:Name="TxtValor"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

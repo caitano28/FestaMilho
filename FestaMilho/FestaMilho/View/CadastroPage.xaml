@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestaMilho.View.CadastroPage"
+             Title="Cadastro de Usuário"
+             BackgroundColor="{StaticResource InicialColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ScrollView>
+    <StackLayout Padding="8" BindingContext="{Binding NovoCadastro}" Margin="0,20,0,0">
+
+            <Label Style="{StaticResource LabelTopo}"
+                   Text="CADASTRO"/>
+        
+            <BoxView Style="{StaticResource LinhaBox}"/>
+
+            <StackLayout Padding="8">
+
+            <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <StackLayout Style="{StaticResource BordaEntry}">
+                <Entry x:Name="TxtNome" Placeholder="Digite seu nome*" Keyboard="Text" 
+                 Text="{Binding Nome, Mode=TwoWay}" 
+                 Style="{StaticResource EntryPadrao}"/>
+            </StackLayout>
+
+                <StackLayout Style="{StaticResource BordaEntry}">
+            <Entry  x:Name="TxtEmail" Placeholder="Digite seu e-mail*" Keyboard="Email" 
+                    Text="{Binding Email, Mode=TwoWay}" 
+                    Style="{StaticResource EntryPadrao}"/> 
+            </StackLayout>
+
+                <StackLayout Style="{StaticResource BordaEntry}">
+                <Entry  Placeholder="Confirme seu e-mail*" Keyboard="Email" 
+                        Text="{Binding ConfirmaEmail, Mode=TwoWay}"
+                        x:Name="TxtConfirmeMail" Style="{StaticResource EntryPadrao}"/>
+            </StackLayout>
+
+                <StackLayout Style="{StaticResource BordaEntry}">
+                <Entry  x:Name="TxtSenha" Placeholder="Digite sua senha*" 
+                        Keyboard="Text" IsPassword="True"
+                        Text="{Binding Senha, Mode=TwoWay}"
+                        Style="{StaticResource EntryPadrao}"/>
+            </StackLayout>
+
+                <StackLayout Style="{StaticResource BordaEntry}">
+                <Entry  Placeholder="Confirme sua senha*"  
+                        Keyboard="Text" IsPassword="True" 
+                        Text="{Binding ConfirmaSenha, Mode=TwoWay}" 
+                        x:Name="TxtConfirmeSenha" Style="{StaticResource EntryPadrao}"/>
+            </StackLayout>
+
+            <ActivityIndicator IsRunning="{Binding IsRunning}"/>
+            
+            <StackLayout Orientation="Vertical" Margin="0,0,0,0">
+
+                <Button Text="Cadastrar"  
+                    x:Name="BtCadastrar"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="Button_Clicked"
+                    Command="{Binding CadastrarCommand}"
+                    Style="{StaticResource ButtonPadrao}">
+                </Button>
+                
+            <Button Text="Cancelar" 
+                    x:Name="BtCancelar"
+                    HorizontalOptions="CenterAndExpand" 
+                    Clicked="BtCancelar_Clicked"
+                    Style="{StaticResource ButtonSecundario}">
+            </Button>
+            </StackLayout>
+        </StackLayout>
+      
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
