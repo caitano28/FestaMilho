@@ -1,0 +1,2 @@
+# FestaMilho
+Projeto Academico para a Festa do Miilho da faculdade Fasipe, app para celular construido com Xamarin Forms pela turma do 5 semestre de ads 2018, alunos reponsavel pelo desenvolvimento, Rodrigo Caitano, Erik Vaz, Atimir Menin, para rodar localmente é necessario o backend e api apontando para o endereco do adaptador de rede, link do backend: https://github.com/Malagurti/Backend_Festamilho
