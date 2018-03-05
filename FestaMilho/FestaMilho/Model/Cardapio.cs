@@ -7,10 +7,10 @@ namespace FestaMilho.Model
         [PrimaryKey]
         public int Id { get; set; }
         public string _id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public string FormaPagamento { get; set; }
-        public string Valor { get; set; }
+        public string nome { get; set; }
+        public string descricao { get; set; }
+        public string formaPagamento { get; set; }
+        public string valor { get; set; }
     
 
         public Cardapio()

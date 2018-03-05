@@ -24,7 +24,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Avaliacao.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Barraca.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BarracaReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Cardapio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\CardapioReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Curso.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\CasdastroRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\LoginRequest.cs" />
@@ -32,6 +34,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\RecuperarRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CadastroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioViewModel.cs" />

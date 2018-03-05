@@ -19,6 +19,8 @@ namespace FestaMilho.Data
             _conexao = new SQLiteConnection(config.Plataform,
                 System.IO.Path.Combine(config.DiretorioDataBase, "FestaMilho.db"));
             _conexao.CreateTable<Usuario>();
+            _conexao.CreateTable<CardapioReturn>();
+            _conexao.CreateTable<BarracaReturn>();
         }
 
         public void Add<T>(T model)
@@ -47,6 +49,14 @@ namespace FestaMilho.Data
         {
            return _conexao.Table<T>();
            
+        }
+        public IEnumerable<BarracaReturn> GetBarracas()
+        {
+            return _conexao.Table<BarracaReturn>();
+        }
+        public IEnumerable<CardapioReturn> GetCardapios()
+        {
+            return _conexao.Table<CardapioReturn>();
         }
         public void Dispose()
         {

@@ -1,6 +1,7 @@
 ﻿using FestaMilho.Model;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +10,77 @@ namespace FestaMilho.Services
 {
     public class APIService
     {
+        public DataService dataService;
         public HttpClient client = new HttpClient();
-        
-    
+        public static readonly string ServidorApi = "http://192.168.0.203:4000"; //ip do backend caso seje local ip da placa de rede
+        public APIService()
+        {
+            dataService = new DataService();
+        } //contrutor
+
+        public async Task<Response> GetBarraca()
+        {
+            try
+            {
+                var uri = new Uri(String.Format("{0}/barraca",ServidorApi));
+                var user = dataService.GetUser();
+                var bearer = String.Format("bearer {0}", user.Token);
+                client.DefaultRequestHeaders.Add("Authorization", bearer);
+                var response = await client.GetStringAsync(uri);
+               
+                
+                var barraca = JsonConvert.DeserializeObject<List<BarracaReturn>>(response);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Download de barraca OK!",
+                    BarracaResult = barraca,
+                };
+            }
+            catch (Exception ex)
+            {
+                return
+                new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+                //throw ex;
+            }
+        }
+        public async Task<Response> GetCardapio()
+        {
+            try
+            {
+                var uri = new Uri(String.Format("{0}/cardapio", ServidorApi));
+                var response = await client.GetStringAsync(uri);
+                var lista = new List<CardapioReturn>();
+                var cardapio = JsonConvert.DeserializeObject<List<CardapioReturn>>(response);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Download de Cardapio Ok",
+                    CardapioResult = cardapio,
+                };
+            }
+            catch (Exception ex)
+            {
+                return
+                new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+                //throw ex;
+            }
+        }
         public async Task<Response> Cadastrar(CadastroRequest cadastro)
         {
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(cadastro);
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-                var uri = new Uri("http://192.168.2.101:4000/auth/registro");
+                var uri = new Uri(String.Format("{0}/auth/registro", ServidorApi));
                 HttpResponseMessage response = null;
 
                 response = await client.PostAsync(uri, httpContent);
@@ -62,7 +124,7 @@ namespace FestaMilho.Services
             {
                 var jsonRequest = JsonConvert.SerializeObject(login);
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-                var uri = new Uri("http://192.168.2.101:4000/auth/autenticacao");
+                var uri = new Uri(String.Format("{0}/auth/autenticacao", ServidorApi));
                 HttpResponseMessage response = null;
 
                 response = await client.PostAsync(uri, httpContent);
@@ -99,15 +161,13 @@ namespace FestaMilho.Services
                 throw;
             }
         }
-
-
         public async Task<Response> Recuperar (RecuperarRequest recuperar)
         {
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(recuperar);
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-                var uri = new Uri("http://192.168.2.101:4000/auth/recuperasenha");
+                var uri = new Uri(String.Format("{0}/auth/recuperasenha", ServidorApi));
                 HttpResponseMessage response = null;
 
                 response = await client.PostAsync(uri, httpContent);
@@ -147,30 +207,6 @@ namespace FestaMilho.Services
             }
         }
 
-        //public async Task UpdateProdutoAsync(Produto produto)
-        //{
-        //    string url = "http://www.macwebapi.somee.com/api/produtos/{0}";
-        //    var uri = new Uri(string.Format(url, produto.Id));
-
-        //    var data = JsonConvert.SerializeObject(produto);
-        //    var content = new StringContent(data, Encoding.UTF8, "application/json");
-
-        //    HttpResponseMessage response = null;
-        //    response = await client.PutAsync(uri, content);
-
-        //    if (!response.IsSuccessStatusCode)
-        //    {
-        //        throw new Exception("Erro ao atualizar produto");
-        //    }
-
-        //}
-
-        //public async Task DeletaProdutoAsync(Produto produto)
-        //{
-        //    string url = "http://www.macwebapi.somee.com/api/produtos/{0}";
-        //    var uri = new Uri(string.Format(url, produto.Id));
-        //    await client.DeleteAsync(uri);
-        //}
     }
 }
 

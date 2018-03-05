@@ -98,5 +98,130 @@ namespace FestaMilho.Services
 
             }
         }
+        public IEnumerable<CardapioReturn> GetAllCardapio()
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetCardapios();
+            }
+        }
+        public CardapioReturn GetCardapio()
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.First<CardapioReturn>();
+
+            }
+        }
+        public BarracaReturn GetBarraca()
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.First<BarracaReturn>();
+
+            }
+        }
+        public Response UpdateBarraca(BarracaReturn barracaReturn)
+        {
+            try
+            {
+                using (var dt = new Conexao())
+                {
+                    dt.Update(barracaReturn);
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Barraca editado com Sucesso!",
+                    Result = barracaReturn
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
+            }
+        }
+        public Response InsertBarraca(BarracaReturn barracaReturn)
+        {
+            try
+            {
+                using (var dt = new Conexao())
+                {
+                    dt.Add(barracaReturn);
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Barraca Cadastrado com Sucesso!",
+                    Result = barracaReturn
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
+            }
+        }
+        public Response UpdateCardapio(CardapioReturn cardapioReturn)
+        {
+            try
+            {
+                using (var dt = new Conexao())
+                {
+                    dt.Update(cardapioReturn);
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Cardapio editado com Sucesso!",
+                    Result = cardapioReturn
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
+            }
+        }
+        public Response InsertCardapio(CardapioReturn cardapioReturn)
+        {
+            try
+            {
+                using (var dt = new Conexao())
+                {
+                    dt.Add(cardapioReturn);
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Cardapio Cadastrado com Sucesso!",
+                    Result = cardapioReturn
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
+            }
+        }
     }
 }
