@@ -73,9 +73,12 @@ namespace FestaMilho.ViewModel
                 var barraca = dataService.GetBarraca();
                 if (barraca != null)
                 {
+                    conexao.DropTable<BarracaReturn>();
+                    conexao.CreateTable<BarracaReturn>();
                     foreach (var x in BarracaList)
                     {
-                        var update = dataService.UpdateBarraca(x);
+                        
+                        var insert = dataService.InsertBarraca(x);
                     }
                 }
                 else
@@ -109,9 +112,11 @@ namespace FestaMilho.ViewModel
                 var cardapio = dataService.GetCardapio();
                 if (cardapio != null)
                 {
+                    conexao.DropTable<CardapioReturn>();
+                    conexao.CreateTable<CardapioReturn>();
                     foreach (var x in CardapioList)
                     {
-                        var update = dataService.UpdateCardapio(x);
+                        var insert = dataService.InsertCardapio(x);
                     }
                 }
                 else

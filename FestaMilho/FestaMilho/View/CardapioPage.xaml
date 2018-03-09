@@ -16,8 +16,8 @@
         </StackLayout>
         <StackLayout Margin="10,0,0,10">
             <ListView ItemsSource="{Binding CardapioList}" HasUnevenRows="True" HorizontalOptions="Center" x:Name="ListCarpio" HeightRequest="250" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
                     <ViewCell>
                         <Grid>
                             <!--<Grid.GestureRecognizers>

@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
              x:Class="FestaMilho.View.Login"
              Title="Login"
-             BackgroundColor="{StaticResource InicialColor}"
+             BackgroundColor="{StaticResource MenuColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+
              >
     <ScrollView>
         <StackLayout Padding="8" BindingContext="{Binding NovoLogin}">
@@ -25,57 +27,57 @@
             <BoxView Style="{StaticResource LinhaBox}"/>
 
             <StackLayout Padding="8" Margin="0,5,0,0">
-
-                <StackLayout  Style="{StaticResource BordaEntry}">
-                    <Entry Placeholder="E-mail" 
+                <custom:MyEntry Placeholder="E-mail" 
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Email" 
                          Text="{Binding Email, Mode=TwoWay}"/>
-                </StackLayout>
+                <custom:MyEntry Placeholder="Senha" 
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Text" IsPassword="True"
+                         Text="{Binding Senha, Mode=TwoWay}"/>
+            </StackLayout>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-                    <Entry Placeholder="Senha" 
-                           Style="{StaticResource EntryPadrao}"
-                           Keyboard="Text" IsPassword="True" 
-                           Text="{Binding Senha, Mode=TwoWay}"/>
-                </StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsRunning}" HeightRequest="10"/>
+
+            <StackLayout Margin="0,0,0,0" Orientation="Horizontal" Padding="8" >
+
+                <Button Text="Entrar" 
+                HorizontalOptions="FillAndExpand"
+                Style="{StaticResource ButtonInicial}"
+                Command="{Binding LoginCommand}"/>
 
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="Lembrar-Me"
-                       Style="{StaticResource LabelPadrao}"
-                       HorizontalOptions="Start"/>
-                
+
                 <controls:CheckBox  x:Name="CheckBox"   
                                     Checked="{Binding Remenbered, Mode=TwoWay}" 
-                                    HorizontalOptions="Start">Lembrar-me</controls:CheckBox>
+                                    HorizontalOptions="Start"
+                                    DefaultText="Lembrar-Me"
+                                    TextColor="{StaticResource TextLabelColor}"></controls:CheckBox>
+            </StackLayout>
+            
+ 
+            <StackLayout Orientation="Vertical" Margin="0,25,0,0">
 
                 <Label Text="Recuperar Senha"
                        Style="{StaticResource LabelPadrao}"
-                       HorizontalOptions="End">
+                       HorizontalOptions="CenterAndExpand">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding RecuperarCommand}">
                         </TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
-                
-            </StackLayout>
-            
-            <ActivityIndicator IsRunning="{Binding IsRunning}"/>
+                <Label Text="Você é novo? Cadastre-se"
+                       FontSize="16"
+                       Style="{StaticResource LabelPadrao}"
+                       HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CadastrarCommand}">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
 
-            <StackLayout Orientation="Vertical" Margin="0,0,0,0">
-
-                <Button Text="Entrar" 
-                HorizontalOptions="CenterAndExpand"
-                Style="{StaticResource ButtonPadrao}"
-                Command="{Binding LoginCommand}"/>
-                
-                <Button Text="Cadastrar"
-                HorizontalOptions="CenterAndExpand" 
-                Style="{StaticResource ButtonSecundario}"
-                Command="{Binding CadastrarCommand}"/>
-                
             </StackLayout>
 
 

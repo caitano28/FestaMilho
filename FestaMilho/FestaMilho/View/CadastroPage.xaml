@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
              x:Class="FestaMilho.View.CadastroPage"
              Title="Cadastro de Usuário"
-             BackgroundColor="{StaticResource InicialColor}"
+             BackgroundColor="{StaticResource MenuColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ScrollView>
     <StackLayout Padding="8" BindingContext="{Binding NovoCadastro}" Margin="0,20,0,0">
@@ -17,37 +18,36 @@
 
             <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-                <Entry x:Name="TxtNome" Placeholder="Digite seu nome*" Keyboard="Text" 
-                 Text="{Binding Nome, Mode=TwoWay}" 
-                 Style="{StaticResource EntryPadrao}"/>
-            </StackLayout>
+                <custom:MyEntry Placeholder="Digite seu nome*"
+                         x:Name="TxtNome"
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Text" 
+                         Text="{Binding Nome, Mode=TwoWay}"/>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-            <Entry  x:Name="TxtEmail" Placeholder="Digite seu e-mail*" Keyboard="Email" 
-                    Text="{Binding Email, Mode=TwoWay}" 
-                    Style="{StaticResource EntryPadrao}"/> 
-            </StackLayout>
+                <custom:MyEntry Placeholder="Digite seu e-mail*"
+                         x:Name="TxtEmail"
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Email" 
+                         Text="{Binding Email, Mode=TwoWay}"/>
+                
+                <custom:MyEntry Placeholder="Confirme seu e-mail*"
+                         x:Name="TxtConfirmeMail"
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Email" 
+                         Text="{Binding ConfirmaEmail, Mode=TwoWay}"/>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-                <Entry  Placeholder="Confirme seu e-mail*" Keyboard="Email" 
-                        Text="{Binding ConfirmaEmail, Mode=TwoWay}"
-                        x:Name="TxtConfirmeMail" Style="{StaticResource EntryPadrao}"/>
-            </StackLayout>
+                <custom:MyEntry Placeholder="Digite sua senha*"
+                         x:Name="TxtSenha"
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Text" IsPassword="True"
+                         Text="{Binding Senha, Mode=TwoWay}"/>
+                
+                <custom:MyEntry Placeholder="Confirme sua senha*"
+                         x:Name="TxtConfirmeSenha"
+                         Style="{StaticResource EntryPadrao}" 
+                         Keyboard="Text" IsPassword="True"
+                         Text="{Binding ConfirmaSenha, Mode=TwoWay}"/>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-                <Entry  x:Name="TxtSenha" Placeholder="Digite sua senha*" 
-                        Keyboard="Text" IsPassword="True"
-                        Text="{Binding Senha, Mode=TwoWay}"
-                        Style="{StaticResource EntryPadrao}"/>
-            </StackLayout>
-
-                <StackLayout Style="{StaticResource BordaEntry}">
-                <Entry  Placeholder="Confirme sua senha*"  
-                        Keyboard="Text" IsPassword="True" 
-                        Text="{Binding ConfirmaSenha, Mode=TwoWay}" 
-                        x:Name="TxtConfirmeSenha" Style="{StaticResource EntryPadrao}"/>
-            </StackLayout>
 
             <ActivityIndicator IsRunning="{Binding IsRunning}"/>
             

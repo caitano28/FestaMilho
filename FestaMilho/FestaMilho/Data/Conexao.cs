@@ -1,6 +1,7 @@
 ﻿using FestaMilho.Interfaces;
 using FestaMilho.Model;
-using SQLite.Net;
+using SQLite;
+//using SQLite.Net;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,27 @@ namespace FestaMilho.Data
 {
     public class Conexao : IDisposable
     {
-
+        private readonly ISQLitePlatform _platform;
         private SQLiteConnection _conexao;
 
         public Conexao()
         {
-            var config = DependencyService.Get<IConfiguration>();
-            _conexao = new SQLiteConnection(config.Plataform,
-                System.IO.Path.Combine(config.DiretorioDataBase, "FestaMilho.db"));
+            _platform = DependencyService.Get<ISQLitePlatform>();
+            //var config = DependencyService.Get<ISQLitePlatform>();
+            _conexao = _platform.GetConnection();//new SQLiteConnection(config.Plataform,
+                                                     //System.IO.Path.Combine(config.DiretorioDataBase, "FestaMilho.db"));
             _conexao.CreateTable<Usuario>();
             _conexao.CreateTable<CardapioReturn>();
             _conexao.CreateTable<BarracaReturn>();
+        }
+        public void DropTable<T>() where T : class
+        {
+            _conexao.DropTable<T>();
+        }
+
+        public void CreateTable<T>() where T : class
+        {
+            _conexao.CreateTable<T>();
         }
 
         public void Add<T>(T model)
@@ -37,19 +48,27 @@ namespace FestaMilho.Data
             _conexao.Delete(model);
         }
 
-        public T Find<T>(int id) where T : class
+        //public T Find<T>(int id) where T : class
+        //{
+        //    return _conexao.Table<T>().Where(i => i.GetHashCode() == id).FirstOrDefault();
+        //}
+        public Usuario FirstUser() 
         {
-            return _conexao.Table<T>().Where(i => i.GetHashCode() == id).FirstOrDefault();
+            return _conexao.Table<Usuario>().FirstOrDefault();
         }
-        public T First<T>() where T : class
+        public CardapioReturn FirstCardapio()
         {
-            return _conexao.Table<T>().FirstOrDefault();
+            return _conexao.Table<CardapioReturn>().FirstOrDefault();
         }
-        public IEnumerable<T> GetIEnum<T>() where T : class
+        public BarracaReturn FirstBarraca()
         {
-           return _conexao.Table<T>();
-           
+            return _conexao.Table<BarracaReturn>().FirstOrDefault();
         }
+        //public IEnumerable<T> GetIEnum<T>() where T : class
+        //{
+        //   return _conexao.Table<T>();
+
+        //}
         public IEnumerable<BarracaReturn> GetBarracas()
         {
             return _conexao.Table<BarracaReturn>();

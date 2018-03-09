@@ -18,7 +18,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Data\Conexao.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infraestructure\InstanceLocator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISQLitePlatform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -35,6 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CadastroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioViewModel.cs" />
@@ -129,9 +130,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Styles\Style.css" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\RecuperarPage.xaml">

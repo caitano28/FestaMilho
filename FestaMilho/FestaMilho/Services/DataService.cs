@@ -94,7 +94,7 @@ namespace FestaMilho.Services
         {
             using (var dt = new Conexao())
             {
-                return dt.First<Usuario>();
+                return dt.FirstUser();
 
             }
         }
@@ -109,7 +109,7 @@ namespace FestaMilho.Services
         {
             using (var dt = new Conexao())
             {
-                return dt.First<CardapioReturn>();
+                return dt.FirstCardapio();
 
             }
         }
@@ -117,7 +117,7 @@ namespace FestaMilho.Services
         {
             using (var dt = new Conexao())
             {
-                return dt.First<BarracaReturn>();
+                return dt.FirstBarraca();
 
             }
         }

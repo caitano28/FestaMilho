@@ -8,13 +8,13 @@
             <!--<https://color.adobe.com/pt/Buoys-1-color-theme-7526697/edit/?copy=true&base=2&rule=Custom&selected=3&name=C%C3%B3pia%20de%20Buoys%201&mode=rgb&rgbvalues=0.0117647,0.505882,0.0941176,0.94902,0.94902,0.94902,0,0.180392,0.407843,0.94902,0.733333,0.0745098,0.94902,0.196078,0.027451&swatchOrder=0,1,2,3,4/>-->
             <Color x:Key="MainColor">#002E68</Color>
             <Color x:Key="FontColor">#F2F2F2</Color>
-            <Color x:Key="MenuColor">#038118</Color>
+            <Color x:Key="MenuColor">#2B6B2D</Color>
             <Color x:Key="InicialColor">White</Color>
             <Color x:Key="MenuFontColor">#F2F2F2</Color>
             <Color x:Key="BackgroundColor">#F2BB13</Color>
             <Color x:Key="AcentColor">#F2BB13</Color>
-            
-            
+
+            <Color x:Key="TextLabelColor">White</Color>
             <Color x:Key="TextEntryColor">Black</Color>
             <Color x:Key="BackgroundEntryColor">White</Color>
             <Color x:Key="BtColorGreen">#9EFF5A</Color>
@@ -23,11 +23,19 @@
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
             
             <Style x:Key="EntryPadrao" TargetType="Entry">
-                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource TextEntryColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource TextEntryColor}"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundEntryColor}"/>
+                <Setter Property="FontSize" Value="18"/>
             </Style>
             
+            <Style x:Key="ButtonInicial" TargetType="Button">
+                <Setter Property="BorderRadius" Value="4"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BtColorGreen}"/>
+                <Setter Property="FontSize" Value="14"/>
+                <!--<Setter Property="WidthRequest" Value="200"/>-->
+            </Style>
             <Style x:Key="ButtonPadrao" TargetType="Button">
                 <Setter Property="BorderRadius" Value="10"/>
                 <Setter Property="TextColor" Value="White"/>
@@ -46,18 +54,18 @@
             </Style>
             <Style x:Key="LinhaBox" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="2"/>
-                <Setter Property="Color" Value="{StaticResource BtColorGreen}"/>
+                <Setter Property="Color" Value="{StaticResource TextLabelColor}"/>
             </Style>
             <Style x:Key="LabelTopo" TargetType="Label">
                 <Setter Property="FontSize" Value="24"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="{StaticResource BtColorGreen}"/>
+                <Setter Property="TextColor" Value="{StaticResource TextLabelColor}"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
             
             <Style x:Key="LabelPadrao" TargetType="Label">
                 <Setter Property="FontSize" Value="18"/>
-                <Setter Property="TextColor" Value="{StaticResource BtColorGreen}"/>
+                <Setter Property="TextColor" Value="{StaticResource TextLabelColor}"/>
             </Style>
             
             <Style x:Key="BordaEntry" TargetType="StackLayout">
