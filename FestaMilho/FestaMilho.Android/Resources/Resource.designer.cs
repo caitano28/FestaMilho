@@ -26,6 +26,7 @@ namespace FestaMilho.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::ModernHttpClient.Resource.String.library_name = global::FestaMilho.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FestaMilho.Droid.Resource.Attribute.actionBarSize;
 			global::XLabs.Forms.Resource.Animation.abc_fade_in = global::FestaMilho.Droid.Resource.Animation.abc_fade_in;
 			global::XLabs.Forms.Resource.Animation.abc_fade_out = global::FestaMilho.Droid.Resource.Animation.abc_fade_out;
