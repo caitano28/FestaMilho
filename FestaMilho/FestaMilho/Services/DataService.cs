@@ -2,6 +2,7 @@
 using FestaMilho.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FestaMilho.Services
@@ -98,6 +99,19 @@ namespace FestaMilho.Services
 
             }
         }
+
+        public List<CardapioReturn> GetCardapios(string filter)
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetList<CardapioReturn>()
+                .OrderBy(p => p.nomeprato)
+                .Where(i => i.descricao.ToLower().Contains(filter.ToLower()) || (i.nomeprato.Contains(filter.ToLower())))
+                .ToList();
+            }
+
+        }
+
         public IEnumerable<CardapioReturn> GetAllCardapio()
         {
             using (var dt = new Conexao())

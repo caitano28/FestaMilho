@@ -122,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microcharts.Forms">
-      <Version>0.6.2</Version>
+      <Version>0.6.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl">
       <Version>1.1.10</Version>
@@ -132,6 +132,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Net.Http">
       <Version>2.2.29</Version>
+    </PackageReference>
+    <PackageReference Include="modernhttpclient-updated">
+      <Version>2.6.0</Version>
     </PackageReference>
     <PackageReference Include="MvvmLightLibs">
       <Version>5.4.1</Version>
@@ -144,6 +147,9 @@
     </PackageReference>
     <PackageReference Include="SQLiteNetExtensions">
       <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
     <PackageReference Include="XLabs.Forms">

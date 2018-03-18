@@ -38,6 +38,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CadastroViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\APIService.cs" />

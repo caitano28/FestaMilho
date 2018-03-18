@@ -60,7 +60,7 @@ namespace FestaMilho.ViewModel
             dataService = new DataService();
             navigationServices = new NavigationServices();
             dialogServices = new DialogServices();
-            LoadCardapio();
+          //  LoadCardapio();
             LoadBarraca();
         }
 
@@ -102,43 +102,43 @@ namespace FestaMilho.ViewModel
             return;
         }
 
-        private async void LoadCardapio()
-        {
+        //private async void LoadCardapio()
+        //{
             
-            var response = await apiService.GetCardapio();
-            if (response.IsSuccess)
-            {
-                CardapioList = response.CardapioResult;
-                var cardapio = dataService.GetCardapio();
-                if (cardapio != null)
-                {
-                    conexao.DropTable<CardapioReturn>();
-                    conexao.CreateTable<CardapioReturn>();
-                    foreach (var x in CardapioList)
-                    {
-                        var insert = dataService.InsertCardapio(x);
-                    }
-                }
-                else
-                {
-                    foreach (var x in CardapioList)
-                    {
-                        var insert = dataService.InsertCardapio(x);
-                    }
-                }
-            }
-            else
-            {
-                var cardapios = conexao.GetCardapios();
-                foreach (var item in cardapios)
-                {
-                    CardapioList.Add(item);
-                }
-                return;
-            }
+        //    var response = await apiService.GetCardapio();
+        //    if (response.IsSuccess)
+        //    {
+        //        CardapioList = response.CardapioResult;
+        //        var cardapio = dataService.GetCardapio();
+        //        if (cardapio != null)
+        //        {
+        //            conexao.DropTable<CardapioReturn>();
+        //            conexao.CreateTable<CardapioReturn>();
+        //            foreach (var x in CardapioList)
+        //            {
+        //                var insert = dataService.InsertCardapio(x);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            foreach (var x in CardapioList)
+        //            {
+        //                var insert = dataService.InsertCardapio(x);
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        var cardapios = conexao.GetCardapios();
+        //        foreach (var item in cardapios)
+        //        {
+        //            CardapioList.Add(item);
+        //        }
+        //        return;
+        //    }
 
-            return;
-        }
+        //    return;
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
 

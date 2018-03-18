@@ -64,6 +64,13 @@ namespace FestaMilho.Data
         {
             return _conexao.Table<BarracaReturn>().FirstOrDefault();
         }
+
+        public IEnumerable<T> GetList<T>() where T : new ()
+        {
+            
+                return _conexao.Table<T>();
+            
+        }
         //public IEnumerable<T> GetIEnum<T>() where T : class
         //{
         //   return _conexao.Table<T>();

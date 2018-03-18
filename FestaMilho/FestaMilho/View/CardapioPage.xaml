@@ -6,82 +6,47 @@
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ScrollView>
-    <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8" BindingContext="{Binding Cardapio}">
-        <!--<ActivityIndicator IsRunning="{Binding IsRunning}"/>-->
-        <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
+        <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
+            <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
             <StackLayout Style="{StaticResource BordaEntry}">
-                <SearchBar Placeholder="O que deseja comer?" 
-                       x:Name="BuscaCardapio" TextChanged="OnTextChanged" BackgroundColor="White"/>
+                    <SearchBar Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
+                       Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout Margin="10,0,0,10">
-            <ListView ItemsSource="{Binding CardapioList}" HasUnevenRows="True" HorizontalOptions="Center" x:Name="ListCarpio" HeightRequest="250" >
+            <StackLayout Padding="8" BackgroundColor="WhiteSmoke">
+                <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" HeightRequest="250">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <!--<Grid.GestureRecognizers>
+                            <ViewCell>
+                                <Grid>
+                                    <!--<Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding NavigateCommand}">
 
                                 </TapGestureRecognizer>
                             </Grid.GestureRecognizers>-->
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Row="0" Orientation="Vertical"  Grid.Column="0">
-                                    <Label Text="Nome" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" HorizontalOptions="CenterAndExpand" />
-                                <Label Text="{Binding nomeprato}" TextColor="{StaticResource FontColor}" HorizontalOptions="CenterAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="1">
-                                    <Label Text="Descrição" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                <Label Text="{Binding descricao}" TextColor="{StaticResource FontColor}"/>
-                                </StackLayout>
-                            <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="2">
-                                    <Label Text="Valor" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                <Label Text="{Binding valor}" TextColor="{StaticResource FontColor}" x:Name="TxtValor"/>
-                            </StackLayout>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Orientation="Vertical"  Grid.Column="0">
+                                        <Label Text="Nome" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" HorizontalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding nomeprato}" TextColor="{StaticResource TextEntryColor}" HorizontalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="1">
+                                        <Label Text="Descrição" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
+                                        <Label Text="{Binding descricao}" TextColor="{StaticResource TextEntryColor}"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="2">
+                                        <Label Text="Valor" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
+                                        <Label Text="{Binding valor}" TextColor="{StaticResource TextEntryColor}" x:Name="TxtValor"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
-        <StackLayout Margin="10,0,0,10">
-            <ListView ItemsSource="{Binding BarracaList}" HasUnevenRows="True" HorizontalOptions="Center" x:Name="ListBarraca" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <!--<Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateCommand}">
-
-                                </TapGestureRecognizer>
-                            </Grid.GestureRecognizers>-->
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Row="0" Orientation="Vertical"  Grid.Column="0">
-                                    <Label Text="Nome" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" HorizontalOptions="CenterAndExpand" />
-                                    <Label Text="{Binding nome}" TextColor="{StaticResource FontColor}" HorizontalOptions="CenterAndExpand"/>
-                                </StackLayout>
-                                <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="1">
-                                    <Label Text="Cuso" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                    <Label Text="{Binding Curso}" TextColor="{StaticResource FontColor}"/>
-                                </StackLayout>
-                                <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="2">
-                                    <Label Text="Localizacão" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                    <Label Text="{Binding localizacao}" TextColor="{StaticResource FontColor}" x:Name="TxtValor"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </StackLayout>
     </ScrollView>
 </ContentPage>
