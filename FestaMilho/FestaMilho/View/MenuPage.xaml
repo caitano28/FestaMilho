@@ -6,31 +6,25 @@
              BackgroundColor="{StaticResource MenuColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              >
-    <StackLayout Padding="8">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout Margin="0,40,0,0">
         <StackLayout Orientation="Horizontal">
-            <Image Source="fasipe.png"
-                   WidthRequest="200"
-                   HeightRequest="100"
+            <Image Source="logomilho2.png"
+                   WidthRequest="290"
+                   HeightRequest="145"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    >
             </Image>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label
-            Text="Festa do Milho"
-            TextColor="{StaticResource AcentColor}"
-            FontSize="24"
-            FontAttributes="Bold"
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="Center"
-            >
-            </Label>
-        </StackLayout>
-        <BoxView HeightRequest="3"
-                 Color="{StaticResource AcentColor}">
-        </BoxView>
-        <ListView
+        <BoxView Style="{StaticResource LinhaBox}"/>
+        <StackLayout>
+    <ListView
+     SeparatorVisibility="Default"
      ItemsSource="{Binding Menu}"
      HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -53,12 +47,14 @@
                             <Label
                             Grid.Column="1"
                             VerticalOptions="Center"
-                            TextColor="{StaticResource MenuFontColor}"
+                            FontAttributes="Bold"
+                            TextColor="White"
                             Text="{Binding Title}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

@@ -6,25 +6,24 @@
              x:Class="FestaMilho.View.Login"
              Title="Login"
              BackgroundColor="{StaticResource MenuColor}"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-
              >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="8" BindingContext="{Binding NovoLogin}">
+        <StackLayout Padding="8" Margin="0,70,0,0">
 
             <StackLayout Orientation="Horizontal">
-                <Image Source="milho.png"
-                   WidthRequest="300"
-                   HeightRequest="150"
+                <Image Source="logomilho2.png"
+                   WidthRequest="290"
+                   HeightRequest="145"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    >
                 </Image>
             </StackLayout>
-
-            <Label Style="{StaticResource LabelTopo}"
-                   Text="LOGIN"/>
-            <BoxView Style="{StaticResource LinhaBox}"/>
 
             <StackLayout Padding="8" Margin="0,5,0,0">
                 <custom:MyEntry Placeholder="E-mail" 

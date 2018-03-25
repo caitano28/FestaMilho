@@ -5,13 +5,53 @@
              Title="Sobre"
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Pagina de Sobre!"
-                   TextColor="{StaticResource FontColor}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ScrollView>
+    <StackLayout Padding="8">
+
+        <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
+            <Image Source="sobre" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
+            <Label Text="Milhosoft Maps" FontSize="20" FontAttributes="Bold" 
+                   TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <StackLayout Padding="5" >
+                <Label Text="     Aplicativo desenvolvido para auxiliar na localização dos visitantes na 13° festa do milho, contendo cardápios, localização e nome das barracas, nessa versão 2.0 contando com a função de avaliar a barraca e ver a mais classificada de acordo com a opnião do público."
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Desenvolvedores:"
+                       FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="     Curso: ADS - Análise e Desenvolvimento de Sistemas - Fasipe."
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="     Coordenador: Adriano Barreto - Orientador: Rodrigo Paiva."
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="     Acadêmicos responsáveis pelo código fonte: Atimir Menin, Erik Vaz e Rodrigo C. Costa"
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="     Designer do App: Rodrigo C. Costa"
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
+
+        <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
+                <Image Source="sobre" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
+                <Label Text="Festa do Milho" FontSize="20" FontAttributes="Bold" 
+                   TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Padding="5" >
+                <Label Text="     Conhecida como a maior festa gastronomica do Norte do Mato Grosso, a festa do milho organizada pela Fasipe (Faculdade de Sinop), chega a 13° edição este ano..."
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Image WidthRequest="300" HeightRequest="150" HorizontalOptions="CenterAndExpand" Source="logofasipe">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding WebSiteCommand}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+        </StackLayout>
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

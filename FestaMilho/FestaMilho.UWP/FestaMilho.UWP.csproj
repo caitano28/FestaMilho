@@ -105,6 +105,17 @@
     <None Include="FestaMilho.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Assets\cardapio.png" />
+    <AndroidResource Include="Assets\Entry_Round.xml" />
+    <AndroidResource Include="Assets\fasipe.png" />
+    <AndroidResource Include="Assets\icon.png" />
+    <AndroidResource Include="Assets\logomilho.png" />
+    <AndroidResource Include="Assets\mapa.png" />
+    <AndroidResource Include="Assets\milho.png" />
+    <AndroidResource Include="Assets\sair.png" />
+    <AndroidResource Include="Assets\sobre.png" />
+    <AndroidResource Include="Assets\splash.png" />
+    <AndroidResource Include="Assets\trofeu.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -149,9 +160,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microcharts.Forms">
-      <Version>0.6.1</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.Bcl">
       <Version>1.1.10</Version>
     </PackageReference>

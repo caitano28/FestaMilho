@@ -1,10 +1,11 @@
 ﻿using FestaMilho.Interfaces;
 using FestaMilho.Model;
 using SQLite;
-//using SQLite.Net;
+
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FestaMilho.Data
@@ -17,9 +18,9 @@ namespace FestaMilho.Data
         public Conexao()
         {
             _platform = DependencyService.Get<ISQLitePlatform>();
-            //var config = DependencyService.Get<ISQLitePlatform>();
-            _conexao = _platform.GetConnection();//new SQLiteConnection(config.Plataform,
-                                                     //System.IO.Path.Combine(config.DiretorioDataBase, "FestaMilho.db"));
+
+            _conexao = _platform.GetConnection();
+                                                    
             _conexao.CreateTable<Usuario>();
             _conexao.CreateTable<CardapioReturn>();
             _conexao.CreateTable<BarracaReturn>();
@@ -64,6 +65,8 @@ namespace FestaMilho.Data
         {
             return _conexao.Table<BarracaReturn>().FirstOrDefault();
         }
+
+
 
         public IEnumerable<T> GetList<T>() where T : new ()
         {

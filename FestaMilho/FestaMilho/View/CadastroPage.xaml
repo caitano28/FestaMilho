@@ -5,9 +5,14 @@
              x:Class="FestaMilho.View.CadastroPage"
              Title="Cadastro de Usuário"
              BackgroundColor="{StaticResource MenuColor}"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
     <ScrollView>
-    <StackLayout Padding="8" BindingContext="{Binding NovoCadastro}" Margin="0,20,0,0">
+    <StackLayout Padding="8"  Margin="0,20,0,0">
 
             <Label Style="{StaticResource LabelTopo}"
                    Text="CADASTRO"/>
@@ -51,11 +56,11 @@
 
             <ActivityIndicator IsRunning="{Binding IsRunning}"/>
             
-            <StackLayout Orientation="Vertical" Margin="0,0,0,0">
+            <StackLayout  Margin="0,0,0,0" Padding="8">
 
                 <Button Text="Cadastrar"  
                     x:Name="BtCadastrar"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
                     Clicked="Button_Clicked"
                     Command="{Binding CadastrarCommand}"
                     Style="{StaticResource ButtonPadrao}">
@@ -63,7 +68,7 @@
                 
             <Button Text="Cancelar" 
                     x:Name="BtCancelar"
-                    HorizontalOptions="CenterAndExpand" 
+                    HorizontalOptions="FillAndExpand" 
                     Clicked="BtCancelar_Clicked"
                     Style="{StaticResource ButtonSecundario}">
             </Button>

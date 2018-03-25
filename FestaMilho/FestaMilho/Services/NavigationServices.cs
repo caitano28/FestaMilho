@@ -1,6 +1,5 @@
 ﻿using FestaMilho.Model;
 using FestaMilho.View;
-using System;
 using System.Threading.Tasks;
 
 namespace FestaMilho.Services
@@ -28,6 +27,15 @@ namespace FestaMilho.Services
                     break;
                 case "Sobre":
                     await App.Navigator.PushAsync(new Sobre());
+                    break;
+                case "CardapioDetailPage":
+                    await App.Navigator.PushAsync(new CardapioDetailPage());
+                    break;
+                case "BarracaDetailPage":
+                    await App.Navigator.PushAsync(new BarracaDetailPage());
+                    break;
+                case "WebViewPage":
+                    await App.Navigator.PushAsync(new WebViewPage());
                     break;
                 case "Sair":
                     Logout();

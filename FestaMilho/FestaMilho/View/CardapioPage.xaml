@@ -2,51 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestaMilho.View.CardapioPage"
-             Title="Cardápio"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
+             Title="Milhosoft Maps"
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
     <ScrollView>
         <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
-            <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand">
-            <StackLayout Style="{StaticResource BordaEntry}">
-                    <SearchBar Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
+            
+            <custom:MySearch Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
                        Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White"/>
-            </StackLayout>
-        </StackLayout>
-            <StackLayout Padding="8" BackgroundColor="WhiteSmoke">
-                <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" HeightRequest="250">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <!--<Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateCommand}">
-
-                                </TapGestureRecognizer>
-                            </Grid.GestureRecognizers>-->
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <StackLayout Grid.Row="0" Orientation="Vertical"  Grid.Column="0">
-                                        <Label Text="Nome" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" HorizontalOptions="CenterAndExpand" />
-                                        <Label Text="{Binding nomeprato}" TextColor="{StaticResource TextEntryColor}" HorizontalOptions="CenterAndExpand"/>
-                                    </StackLayout>
-                                    <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="1">
-                                        <Label Text="Descrição" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                        <Label Text="{Binding descricao}" TextColor="{StaticResource TextEntryColor}"/>
-                                    </StackLayout>
-                                    <StackLayout Grid.Row="0" Orientation="Vertical" Grid.Column="2">
-                                        <Label Text="Valor" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource MainColor}" />
-                                        <Label Text="{Binding valor}" TextColor="{StaticResource TextEntryColor}" x:Name="TxtValor"/>
-                                    </StackLayout>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+            
+            <StackLayout Padding="8">
+                
+                <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" 
+                          HeightRequest="150" SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}">
                 </ListView>
+           
             </StackLayout>
+
+            <custom:MySearch Placeholder="Onde Deseja Comer" SearchCommand="{Binding BuscarBarracaCommand}"
+                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White"/>
+
+            <StackLayout Padding="8">
+                <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
+                          HeightRequest="150" SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
+                </ListView>
+
+            </StackLayout>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

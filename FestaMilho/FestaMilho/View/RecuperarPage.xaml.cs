@@ -1,4 +1,5 @@
 ﻿using FestaMilho.Services;
+using FestaMilho.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace FestaMilho.View
         private NavigationServices navigationServices;
 		public RecuperarPage ()
 		{
+            RecuperarViewModel recuperarViewModel = new RecuperarViewModel();
+            BindingContext = recuperarViewModel;
             navigationServices = new NavigationServices();
 			InitializeComponent ();
 		}

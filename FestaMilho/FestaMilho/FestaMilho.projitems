@@ -36,10 +36,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MyEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\MySearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\BarracaViewCell.xaml.cs">
+      <DependentUpon>BarracaViewCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\CardapiosViewCell.xaml.cs">
+      <DependentUpon>CardapiosViewCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BarracaItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CadastroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioItemViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardapioViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\APIService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DialogServices.cs" />
@@ -47,8 +56,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MenuItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\RecuperarViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\BarracaDetailPage.xaml.cs">
+      <DependentUpon>BarracaDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\CadastroPage.xaml.cs">
       <DependentUpon>CadastroPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\CardapioDetailPage.xaml.cs">
+      <DependentUpon>CardapioDetailPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\CardapioPage.xaml.cs">
@@ -81,6 +98,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\Sobre.xaml.cs">
       <DependentUpon>Sobre.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\WebViewPage.xaml.cs">
+      <DependentUpon>WebViewPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -136,6 +157,36 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\RecuperarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\CardapioDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\CardapiosViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\BarracaViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\BarracaDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\WebViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestaMilho.Templates.CardapiosViewCell"
+             
+             >
+  <ViewCell.View>
+        <Grid BackgroundColor="{StaticResource MenuColor}" Margin="0,3,0,3" >
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding DetalhesBarracaCommand}">
+
+                </TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="Nome" FontSize="9" FontAttributes="Bold,Italic" TextColor="WhiteSmoke" 
+                                           HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0" />
+            <Label Text="Valor" FontSize="9" FontAttributes="Bold,Italic" TextColor="WhiteSmoke" 
+                                           HorizontalOptions="Start" Grid.Row="0" Grid.Column="2"  />
+            <Image Source="mapa" Grid.Row="0" Grid.Column="3" WidthRequest="25" HeightRequest="25" Grid.RowSpan="2" VerticalOptions="Center"/>
+            <Label Text="{Binding nomeprato}" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
+                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0"/>
+            <Label Text="{Binding valor, StringFormat='R$ {0}'}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
+                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" />
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

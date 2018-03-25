@@ -65,6 +65,18 @@ namespace FestaMilho.Services
                 throw;
             }
         }
+
+        public List<CardapioReturn> GetCardapioID(string id)
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetList<CardapioReturn>()
+                .Where(i => (i.barraca == id))
+                .OrderBy(i=> i.nomeprato)
+                .ToList();
+            }
+        }
+
         public Response InsertUser(Usuario usuario)
         {
             try
@@ -100,13 +112,33 @@ namespace FestaMilho.Services
             }
         }
 
+        public List<BarracaReturn> GetBarracaID(string id)
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetList<BarracaReturn>()
+                .Where(i => (i._id == id))
+                .ToList();
+            }
+        }
+        public List<BarracaReturn> GetBarracas(string filter)
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetList<BarracaReturn>()
+                .OrderBy(p => p.nome)
+                .Where(i => (i.nome.ToLower().Contains(filter.ToLower())) || (i.curso.ToLower().Contains(filter.ToLower())))
+                .ToList();
+            }
+        }
+
         public List<CardapioReturn> GetCardapios(string filter)
         {
             using (var dt = new Conexao())
             {
                 return dt.GetList<CardapioReturn>()
                 .OrderBy(p => p.nomeprato)
-                .Where(i => i.descricao.ToLower().Contains(filter.ToLower()) || (i.nomeprato.Contains(filter.ToLower())))
+                .Where(i => (i.descricao.ToLower().Contains(filter.ToLower()) ) || (i.nomeprato.ToLower().Contains(filter.ToLower()) ) )
                 .ToList();
             }
 

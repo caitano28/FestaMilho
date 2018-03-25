@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestaMilho.View.CardapioDetailPage"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
+             Title="Detalhes do Prato"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              Icon="cardapio">
+             
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ScrollView >
+        <StackLayout Padding="8">
+
+            <Grid Margin="0,3,0,3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout  BackgroundColor="{StaticResource MenuColor}" BindingContext="{Binding CurrentCardapio}" Grid.Row="0">
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+
+                        <Label Text="{Binding nomeprato}" HorizontalTextAlignment="Center" FontSize="16" 
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+                        <Label Text="{Binding descricao}" HorizontalTextAlignment="Center" FontSize="12" 
+                       TextColor="{StaticResource TextLabelColor}"/>
+                        <Label Text="{Binding valor, StringFormat='Valor: R$ {0} '}" HorizontalTextAlignment="Center" FontSize="20" 
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+
+                    </StackLayout>
+                    
+                    
+                </StackLayout>
+
+                <StackLayout BackgroundColor="#EA8610" Grid.Row="1" >
+
+                    <StackLayout   BindingContext="{Binding CurrentBarraca}" VerticalOptions="CenterAndExpand" >
+
+                        <Label Text="Produto vendido pela Barraca:" HorizontalTextAlignment="Center" FontSize="12" 
+                       FontAttributes="Bold,Italic" TextColor="{StaticResource TextLabelColor}"/>
+                        <Label Text="{Binding nome}" HorizontalTextAlignment="Center" FontSize="16" 
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+                        <Label Text="{Binding formapagamento, StringFormat='Formas de Pagamento: {0}'}" HorizontalTextAlignment="Center" FontSize="12" 
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding curso, StringFormat='Curso: {0},'}" HorizontalTextAlignment="Start" FontSize="12" 
+                       TextColor="{StaticResource TextLabelColor}"/>
+                            <Label Text="{Binding periodo}" HorizontalTextAlignment="Center" FontSize="12" 
+                       TextColor="{StaticResource TextLabelColor}"/>
+                            <Label Text="Localização:" HorizontalTextAlignment="Center" FontSize="12" 
+                       TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0" IsEnabled="False"/>
+                            <Label Text="{Binding localizacao}" HorizontalTextAlignment="Center" FontSize="12" 
+                        x:Name="localizacao" TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0"/>
+                        </StackLayout>
+                        
+
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Image x:Name="ImgLocal" WidthRequest="250" HeightRequest="125"  HorizontalOptions="Center"/>
+                </StackLayout>
+                
+            </Grid>
+
+            
+
+        </StackLayout>
+        
+    </ScrollView>
+    
+</ContentPage>

@@ -2,15 +2,37 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestaMilho.View.Stand"
-             Title="Barracas"
+             Title="Mapa das Barracas"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                   TextColor="{StaticResource FontColor}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ScrollView>
+        <StackLayout Padding="8">
+
+            <StackLayout>
+                <Image Source="mapa23.png" WidthRequest="350" HeightRequest="175"  HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <custom:MySearch Placeholder="Onde Deseja Comer" SearchCommand="{Binding BuscarBarracaCommand}"
+                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White"/>
+
+            <StackLayout Padding="8">
+
+                <Label Text="Barracas da Festa" HorizontalTextAlignment="Start" FontSize="16" 
+                       FontAttributes="Bold" TextColor="Black"/>
+
+                <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
+                          HeightRequest="200" SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
+                </ListView>
+
+            </StackLayout>
+
+
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

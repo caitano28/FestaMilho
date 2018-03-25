@@ -2,47 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestaMilho.View.RecuperarPage"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
              Title="Recuperar"
-             BackgroundColor="{StaticResource InicialColor}"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             BackgroundColor="{StaticResource MenuColor}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="8" BindingContext="{Binding recuperarViewModel}" Margin="0,20,0,0">
 
-            <Label Style="{StaticResource LabelTopo}"
-                   Text="RECUPERAR SENHA"/>
+    <StackLayout Padding="8"  Margin="0,20,0,0">
+
+            <Label Style="{StaticResource LabelTopo}" Text="RECUPERAR SENHA"/>
 
             <BoxView Style="{StaticResource LinhaBox}"/>
 
             <StackLayout Padding="8">
+            <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-                <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <custom:MyEntry x:Name="TxtEmail" Placeholder="Digite seu e-mail*" 
+                            Keyboard="Email" Text="{Binding Email, Mode=TwoWay}"
+                            Style="{StaticResource EntryPadrao}" />
+            
 
+            <ActivityIndicator IsRunning="{Binding IsRunning}"/>
 
-                <StackLayout Style="{StaticResource BordaEntry}">
-                    <Entry  x:Name="TxtEmail" Placeholder="Digite seu e-mail*" Keyboard="Email" 
-                    Text="{Binding Email, Mode=TwoWay}" 
-                    Style="{StaticResource EntryPadrao}"/>
-                </StackLayout>
-
-                <ActivityIndicator IsRunning="{Binding IsRunning}"/>
-
-                <StackLayout Orientation="Vertical" Margin="0,0,0,0">
+                <StackLayout  Margin="0,0,0,0">
 
                     <Button Text="Recuperar"  
                     x:Name="BtCadastrar"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
                     Command="{Binding RecuperarCommand}"
                     Style="{StaticResource ButtonPadrao}">
                     </Button>
 
                     <Button Text="Cancelar" 
                     x:Name="BtCancelar"
-                    HorizontalOptions="CenterAndExpand" 
+                    HorizontalOptions="FillAndExpand" 
                     Clicked="BtCancelar_Clicked"
                     Style="{StaticResource ButtonSecundario}">
                     </Button>
                 </StackLayout>
+
             </StackLayout>
+
 
         </StackLayout>
     </ScrollView>

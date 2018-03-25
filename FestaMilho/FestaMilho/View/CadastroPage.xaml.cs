@@ -1,5 +1,6 @@
 ﻿using FestaMilho.Model;
 using FestaMilho.Services;
+using FestaMilho.ViewModel;
 using System;
 
 using Xamarin.Forms;
@@ -11,9 +12,12 @@ namespace FestaMilho.View
 	public partial class CadastroPage : ContentPage
 	{
         public DialogServices dialogServices;
+       
         public NavigationServices navigationServices;
 		public CadastroPage (Usuario usuario)
 		{
+            CadastroViewModel cadastroViewModel = new CadastroViewModel();
+            BindingContext = cadastroViewModel;
             navigationServices = new NavigationServices(); //nv tela
             InitializeComponent ();
             TxtEmail.Text = usuario.email;
