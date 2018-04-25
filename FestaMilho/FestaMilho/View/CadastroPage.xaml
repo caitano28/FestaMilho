@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:FestaMilho.Renderers"
              x:Class="FestaMilho.View.CadastroPage"
-             Title="Cadastro de Usuário"
+             Title=""
              BackgroundColor="{StaticResource MenuColor}"
              >
     <ContentPage.Padding>
@@ -12,7 +12,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-    <StackLayout Padding="8"  Margin="0,20,0,0">
+    <StackLayout Padding="8"  Margin="0,0,0,0">
 
             <Label Style="{StaticResource LabelTopo}"
                    Text="CADASTRO"/>

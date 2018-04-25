@@ -41,7 +41,7 @@
         </StackLayout>
 
         <StackLayout Padding="5" >
-                <Label Text="     Conhecida como a maior festa gastronomica do Norte do Mato Grosso, a festa do milho organizada pela Fasipe (Faculdade de Sinop), chega a 13° edição este ano..."
+                <Label Text="     Conhecida como a maior festa gastronomica do Norte do Mato Grosso, a festa do milho organizada pela Fasipe (Faculdade de Sinop), chega a 13° edição este ano, que busca demonstrar e informar à população as atividades que são desenvolvidas com objetivo de demonstrar à sociedade em geral, o valor do milho também como alimentação humana. Dentro do evento, os acadêmicos buscam por desenvolver novos pratos à base deste ingrediente, para assim fazer surgir na população o interesse pelo consumo do mesmo. Além da gastronomia, o evento busca através dos projetos desenvolvidos, atingir à população com ações Sociais, buscando seu bem estar. Neste ano de 2018 a festa acontece entre os dias 24, 25 e 26 de maio no Bairro planejado Aquarela das Artes em Sinop, onde está localizado a Faculdade Fasipe Cidade Universitária."
                        FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                 <Image WidthRequest="300" HeightRequest="150" HorizontalOptions="CenterAndExpand" Source="logofasipe">
                     <Image.GestureRecognizers>

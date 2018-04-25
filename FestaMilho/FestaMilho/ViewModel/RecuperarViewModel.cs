@@ -1,10 +1,8 @@
-﻿using FestaMilho.Model;
+﻿using FestaMilho.Classes;
+using FestaMilho.Model;
 using FestaMilho.Services;
 using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
 
 namespace FestaMilho.ViewModel
@@ -46,18 +44,26 @@ namespace FestaMilho.ViewModel
 
         private async void Recuperar()
         {
+            var validaEmail = new RegexClass();
+            if (!validaEmail.ValidarEmail(Email))
+            {
+                await dialogServices.ShowMessage("Erro", "E-mail! digitado invalido!");
+                return;
+            }
             if (string.IsNullOrEmpty(Email))
             {
                 await dialogServices.ShowMessage("Erro", "E-mail não digitado");
                 return;
             }
-            IsRunning = true;
+           // IsRunning = true;
+            await navigationServices.SetLoadingPage();
             var recuperar = new RecuperarRequest
             {
                 email = Email
             };
             var response = await apiService.Recuperar(recuperar);
-            IsRunning = false;
+            // IsRunning = false;
+            await navigationServices.PopPage();
             if (!response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Erro", response.Message);
@@ -66,7 +72,8 @@ namespace FestaMilho.ViewModel
             else
             {
                 await dialogServices.ShowMessage("Tudo Certo!", response.Message);
-                navigationServices.SetLoginPage();
+                await navigationServices.PopPage();
+               // navigationServices.SetLoginPage();
             }
         }
     }

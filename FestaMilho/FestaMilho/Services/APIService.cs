@@ -12,7 +12,7 @@ namespace FestaMilho.Services
     {
         public DataService dataService;
         public HttpClient client = new HttpClient();
-        public static readonly string ServidorApi = "http://192.168.56.1:4000"; //ip do backend caso seje local ip da placa de rede
+        public static readonly string ServidorApi = "http://192.168.0.102:4000"; //ip do backend caso seje local ip da placa de rede
         public APIService()
         {
             dataService = new DataService();

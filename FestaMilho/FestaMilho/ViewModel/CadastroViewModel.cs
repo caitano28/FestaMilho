@@ -1,4 +1,5 @@
-﻿using FestaMilho.Model;
+﻿using FestaMilho.Classes;
+using FestaMilho.Model;
 using FestaMilho.Services;
 using GalaSoft.MvvmLight.Command;
 using System.ComponentModel;
@@ -54,6 +55,7 @@ namespace FestaMilho.ViewModel
 
         private async void Cadastrar()
         {
+            
             if ((string.IsNullOrEmpty(Nome)) || (string.IsNullOrEmpty(Senha)) || (string.IsNullOrEmpty(Email)))
             {
                await dialogServices.ShowMessage("Erro", "Existem campos em branco!");
@@ -63,6 +65,12 @@ namespace FestaMilho.ViewModel
             if (!string.Equals(Email, ConfirmaEmail))
             {
                 await dialogServices.ShowMessage("Erro:", "Os e-mails digitados são diferentes!");
+                return;
+            }
+            var validaEmail = new RegexClass();
+            if (!validaEmail.ValidarEmail(Email))
+            {
+                await dialogServices.ShowMessage("Erro", "E-mail! digitado invalido!");
                 return;
             }
             if (Senha != ConfirmaSenha)
@@ -76,13 +84,16 @@ namespace FestaMilho.ViewModel
                 email = Email,
                 senha = Senha
             };
-            IsRunning = true;
+            //IsRunning = true;
+            await navigationServices.SetLoadingPage();
             var response = await apiService.Cadastrar(cadastro);
-            IsRunning = false;
+            await navigationServices.PopPage();
+            //IsRunning = false;
             if (response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Tudo Certo!", response.Message);
-                navigationServices.SetLoginPage();
+                // navigationServices.SetLoginPage();
+                await navigationServices.PopPage();
            
             }
             else

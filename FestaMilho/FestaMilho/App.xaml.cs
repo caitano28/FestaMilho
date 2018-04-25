@@ -10,7 +10,7 @@ namespace FestaMilho
         public static NavigationPage Navigator { get; internal set; }
         public static MasterPage Master { get; internal set; }
         public static Usuario CurrentUser { get; internal set; }
-
+        public static bool ImInLoadingView { get; internal set; }
 
         private DataService dataService;
 
@@ -27,7 +27,11 @@ namespace FestaMilho
             }
             else
             {
-                MainPage = new Login();
+                Navigator = new NavigationPage(new Login())
+                {
+                    BarBackgroundColor = Color.FromHex("#038118")
+                };
+                MainPage = Navigator;
             }
 			
 		}

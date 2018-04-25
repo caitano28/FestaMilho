@@ -17,6 +17,7 @@ namespace FestaMilho.View
         private NavigationServices navigationServices;
 		public RecuperarPage ()
 		{
+            
             RecuperarViewModel recuperarViewModel = new RecuperarViewModel();
             BindingContext = recuperarViewModel;
             navigationServices = new NavigationServices();

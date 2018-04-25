@@ -15,8 +15,12 @@
         <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
             
             <custom:MySearch Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
-                       Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White"/>
-            
+                       Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
+
+            <StackLayout Padding="8" BackgroundColor="#E6E7E8" HeightRequest="15">
+                <Label Text="{Binding CardapioFilter, StringFormat='Pesquisando por: {0}'}" />
+            </StackLayout>
+
             <StackLayout Padding="8">
                 
                 <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" 
@@ -26,7 +30,11 @@
             </StackLayout>
 
             <custom:MySearch Placeholder="Onde Deseja Comer" SearchCommand="{Binding BuscarBarracaCommand}"
-                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White"/>
+                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
+
+            <StackLayout Padding="8" BackgroundColor="#E6E7E8" HeightRequest="15">
+                <Label Text="{Binding BarracaFilter, StringFormat='Pesquisando por: {0}'}" />
+            </StackLayout>
 
             <StackLayout Padding="8">
                 <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 

@@ -1,6 +1,7 @@
 ﻿using FestaMilho.Model;
 using FestaMilho.View;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FestaMilho.Services
 {
@@ -49,26 +50,39 @@ namespace FestaMilho.Services
         {
             App.CurrentUser.LembrarSenha = false;
             dataService.DeleteUser(App.CurrentUser);
-            App.Current.MainPage = new Login();
+            App.Navigator = new NavigationPage(new Login())
+            {
+                BarBackgroundColor = Color.FromHex("#038118")
+            };
+            App.Current.MainPage = App.Navigator;
+        }
+        public async Task SetLoadingPage()
+        {
+            await App.Navigator.PushAsync(new Loading(true));
+        }
+        public async Task PopPage()
+        {
+            await Task.Delay(5000);
+            await App.Navigator.PopAsync();
         }
 
-        internal void SetMainPage(Usuario usuario)
+        internal async Task SetMainPage(Usuario usuario)
         {
             App.CurrentUser = usuario;
-            App.Current.MainPage = new MasterPage();
+            await App.Navigator.PushAsync(new MasterPage());
         }
-        internal void SetCadastroPage(Usuario usuario)
+        internal async Task SetCadastroPage(Usuario usuario)
         {
-           App.Current.MainPage = new CadastroPage(usuario);
+          await App.Navigator.PushAsync(new CadastroPage(usuario));
         }
-        internal void SetLoginPage()
+        internal async Task SetLoginPage()
         {
-            App.Current.MainPage = new Login();
+            await App.Navigator.PushAsync(new Login());
         }
 
-        internal void SetRecuperarPage()
+        internal async Task SetRecuperarPage()
         {
-            App.Current.MainPage = new RecuperarPage();
+            await App.Navigator.PushAsync(new RecuperarPage());
         }
     }
 }

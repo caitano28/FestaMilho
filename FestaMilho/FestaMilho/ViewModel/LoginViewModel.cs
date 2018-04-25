@@ -1,5 +1,7 @@
-﻿using FestaMilho.Model;
+﻿using FestaMilho.Classes;
+using FestaMilho.Model;
 using FestaMilho.Services;
+using FestaMilho.View;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.ComponentModel;
@@ -57,6 +59,12 @@ namespace FestaMilho.ViewModel
 
         private async void Login()
         {
+            var validaEmail = new RegexClass();
+            if (!validaEmail.ValidarEmail(Email))
+            {
+                await dialogServices.ShowMessage("Erro", "E-mail! digitado invalido!");
+                return;
+            }
             if (string.IsNullOrEmpty(Email))
             {
                 await dialogServices.ShowMessage("Erro", "Preencha o Campo E-mail!");
@@ -68,14 +76,16 @@ namespace FestaMilho.ViewModel
                 return;
             }
             //API
-            IsRunning = true;
+            // IsRunning = true;
+            await navigationServices.SetLoadingPage();
             var login = new LoginRequest
             {
                 email = Email,
                 senha = Senha,
             };
             var response = await apiService.Login(login);
-            IsRunning = false;
+            await navigationServices.PopPage();
+            //IsRunning = false;
             if (!response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Erro", response.Message);
@@ -91,13 +101,13 @@ namespace FestaMilho.ViewModel
                     Token = response.Result.ToString(),
                 }; //passar da api colocar (Usuario)response.Result;
                 dataService.InsertUser(usuario);
-                navigationServices.SetMainPage(usuario);
+                App.Current.MainPage = new MasterPage();
             }
 
             
         }
 
-        private void Cadastar()
+        private async void Cadastar()
         {
             var usuario = new Usuario
             {
@@ -105,11 +115,11 @@ namespace FestaMilho.ViewModel
                 senha = Senha
             };
 
-            navigationServices.SetCadastroPage(usuario);
+           await navigationServices.SetCadastroPage(usuario);
         }
-        private void Recuperar()
+        private async void Recuperar()
         {
-            navigationServices.SetRecuperarPage();
+            await navigationServices.SetRecuperarPage();
         }
     }
 }

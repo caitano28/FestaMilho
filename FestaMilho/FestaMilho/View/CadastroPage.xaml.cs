@@ -16,6 +16,7 @@ namespace FestaMilho.View
         public NavigationServices navigationServices;
 		public CadastroPage (Usuario usuario)
 		{
+           // NavigationPage.SetHasNavigationBar(this, false);
             CadastroViewModel cadastroViewModel = new CadastroViewModel();
             BindingContext = cadastroViewModel;
             navigationServices = new NavigationServices(); //nv tela

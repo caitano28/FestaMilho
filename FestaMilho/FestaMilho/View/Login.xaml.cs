@@ -9,6 +9,8 @@ namespace FestaMilho.View
 	{
 		public Login ()
 		{
+            NavigationPage.SetHasNavigationBar(this, false);
+          
             LoginViewModel loginViewModel = new LoginViewModel();
             BindingContext = loginViewModel;
 			InitializeComponent ();
