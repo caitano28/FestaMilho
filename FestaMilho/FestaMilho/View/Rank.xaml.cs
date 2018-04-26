@@ -1,4 +1,6 @@
 ﻿using FestaMilho.Model;
+using SkiaSharp;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,15 +16,28 @@ namespace FestaMilho.View
         public Rank ()
 		{
 
-            //BarracaList = new ObservableCollection<Barraca>();
-            //LoadBarraca();
+            BarracaList = new ObservableCollection<Barraca>();
+            LoadBarraca();
             InitializeComponent();
 
         }
 
         protected override void OnAppearing()
         {
-           
+            List<Microcharts.Entry> entries = new List<Microcharts.Entry>();
+            foreach (var x in BarracaList)
+            {
+                var Entrada = new Microcharts.Entry((float)(x.Avaliacao))
+                {
+                    Color = SKColor.Parse(x.Cor),
+                    ValueLabel = x.Avaliacao.ToString(),
+                    Label = x.Nome
+                };
+                entries.Add(Entrada);
+            }
+            Grafico.Chart = new Microcharts.BarChart() { Entries = entries };
+            Grafico.Chart.LabelTextSize = 40 ;
+
         }
 
         private void LoadBarraca()

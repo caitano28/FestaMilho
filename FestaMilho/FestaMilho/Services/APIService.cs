@@ -151,7 +151,7 @@ namespace FestaMilho.Services
                 };
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new Response
                 {

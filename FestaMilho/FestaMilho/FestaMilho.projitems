@@ -24,6 +24,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Avaliacao.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AvaliacaoRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Barraca.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BarracaReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Cardapio.cs" />
@@ -39,6 +40,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MySearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationXamarin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Templates\BarracaViewCell.xaml.cs">
       <DependentUpon>BarracaViewCell.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -103,6 +105,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\Sobre.xaml.cs">
       <DependentUpon>Sobre.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\VotePage.xaml.cs">
+      <DependentUpon>VotePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\WebViewPage.xaml.cs">
@@ -196,6 +202,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\VotePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

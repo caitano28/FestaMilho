@@ -24,9 +24,9 @@ namespace FestaMilho.View
 			InitializeComponent ();
 		}
 
-        private void BtCancelar_Clicked(object sender, EventArgs e)
+        private async  void BtCancelar_Clicked(object sender, EventArgs e)
         {
-            navigationServices.SetLoginPage();
+           await navigationServices.SetLoginPage();
         }
     }
 }

@@ -2,12 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestaMilho.View.Rank"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:custom="clr-namespace:FestaMilho.Renderers"
              Title="Rank das Barracas"
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="10" Spacing="20">
+        
+        <StackLayout Padding="8">
+            <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
+                <Image Source="trofeu" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
+                <Label Text="Classificação das Barracas" FontSize="20" FontAttributes="Bold" 
+                   TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
             
+            <StackLayout Padding="8">
+                <microcharts:ChartView x:Name="Grafico" HeightRequest="270"/>
+            </StackLayout>
+            
+            
+
+            <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
+                <Image Source="trofeu" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
+                <Label Text="Avaliar" FontSize="20" FontAttributes="Bold" 
+                   TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <custom:MySearch Placeholder="Qual barraca deseja avaliar?" SearchCommand="{Binding BuscarBarracaCommand}"
+                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
+
+            <StackLayout Padding="8">
+
+                <Label Text="Barracas da Festa" HorizontalTextAlignment="Start" FontSize="16" 
+                       FontAttributes="Bold" TextColor="Black"/>
+
+                <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
+                          HeightRequest="200" SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
+                </ListView>
+
+            </StackLayout>
         </StackLayout>
+        
     </ScrollView>
 </ContentPage>

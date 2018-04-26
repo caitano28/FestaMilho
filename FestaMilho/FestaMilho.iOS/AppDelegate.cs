@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -22,6 +21,9 @@ namespace FestaMilho.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+//#pragma warning disable CS0618 // O tipo ou membro é obsoleto
+//            Rg.Plugins.Popup.IOS.Popup.Init();
+//#pragma warning restore CS0618 // O tipo ou membro é obsoleto
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

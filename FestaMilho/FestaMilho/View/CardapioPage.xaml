@@ -29,7 +29,7 @@
            
             </StackLayout>
 
-            <custom:MySearch Placeholder="Onde Deseja Comer" SearchCommand="{Binding BuscarBarracaCommand}"
+            <custom:MySearch Placeholder="Onde Deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
                        Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
             <StackLayout Padding="8" BackgroundColor="#E6E7E8" HeightRequest="15">

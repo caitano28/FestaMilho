@@ -5,7 +5,7 @@
              Title="Mapa das Barracas"
              xmlns:custom="clr-namespace:FestaMilho.Renderers"
              BackgroundColor="{StaticResource BackgroundColor}"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">>
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0,20,0,0">
@@ -18,8 +18,8 @@
                 <Image Source="mapa23.png" WidthRequest="350" HeightRequest="175"  HorizontalOptions="Center"/>
             </StackLayout>
 
-            <custom:MySearch Placeholder="Onde Deseja Comer" SearchCommand="{Binding BuscarBarracaCommand}"
-                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White"/>
+            <custom:MySearch Placeholder="Onde Deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
+                       Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
             <StackLayout Padding="8">
 

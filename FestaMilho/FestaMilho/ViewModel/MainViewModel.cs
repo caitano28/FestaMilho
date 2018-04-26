@@ -1,6 +1,7 @@
 ﻿using FestaMilho.Data;
 using FestaMilho.Model;
 using FestaMilho.Services;
+using FestaMilho.View;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,18 @@ using System.Windows.Input;
 
 namespace FestaMilho.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel :  INotifyPropertyChanged
     {
         #region Propriedades
         private APIService apiService; // inicializa api
         private DataService dataService; //sqlite
         private Conexao conexao;//sqlite
+        private DialogServices dialogServices;
         private NavigationServices navigationServices;
+        private NavigationXamarin navigationXamarin;
         public CardapioItemViewModel CurrentCardapio { get; set; }
+        public DateTime DateNow { get; set; }
+        public AvaliacaoRequest AvaliacaoRequest { get; set; }
         public BarracaItemViewModel CurrentBarraca { get; set; }
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
 
@@ -110,7 +115,10 @@ namespace FestaMilho.ViewModel
             CurrentBarraca = new BarracaItemViewModel();
             apiService = new APIService();
             dataService = new DataService();
+            AvaliacaoRequest = new AvaliacaoRequest();
+            dialogServices = new DialogServices();
             navigationServices = new NavigationServices();
+            navigationXamarin = new NavigationXamarin();
             conexao = new Conexao();
             LoadMenu();
             LoadCardapio();
@@ -232,6 +240,31 @@ namespace FestaMilho.ViewModel
             var list = dataService.GetBarracas(BarracaFilter);
             ReloadBarracas(list);
         }//caixadebusca
+        public ICommand AvaliarCommand { get { return new RelayCommand(AvaliarBarraca); } }
+        public async void AvaliarBarraca()
+        {
+            DateNow = DateTime.Now;
+            
+            AvaliacaoRequest.barraca = CurrentBarraca._id;
+            AvaliacaoRequest.dtvotacao = DateNow.ToString();
+            await navigationXamarin.PushPopupAsync(new VotePage());
+           // await dialogServices.ShowMessage("Time do Sistema", DateNow.ToString());
+            
+        }
+        public ICommand CloseCommand { get { return new RelayCommand(Close); } }
+        public async void Close()
+        {
+            await navigationXamarin.PopAllPopupAsync();
+            
+
+        }
+        public ICommand Avaliar2Command { get { return new RelayCommand(PostAvaliacao); } }
+        public async void PostAvaliacao()
+        {
+            await navigationXamarin.PopAllPopupAsync();
+
+
+        }
         public ICommand WebSiteCommand { get { return new RelayCommand(WebSite); } }
         public async void WebSite()
         {
