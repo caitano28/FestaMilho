@@ -15,6 +15,11 @@ namespace FestaMilho.Services
         {
             await Navigation.PopAllPopupAsync();
         }
+        public async Task PopPageAllDelay(int Delay)
+        {
+            await Task.Delay(Delay);
+            await Navigation.PopAllPopupAsync();
+        }
     }
     
 }

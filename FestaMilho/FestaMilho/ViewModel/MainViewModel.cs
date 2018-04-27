@@ -244,11 +244,18 @@ namespace FestaMilho.ViewModel
         public async void AvaliarBarraca()
         {
             DateNow = DateTime.Now;
-            
-            AvaliacaoRequest.barraca = CurrentBarraca._id;
-            AvaliacaoRequest.dtvotacao = DateNow.ToString();
-            await navigationXamarin.PushPopupAsync(new VotePage());
-           // await dialogServices.ShowMessage("Time do Sistema", DateNow.ToString());
+            if (DateNow.Hour >= 19 || DateNow.Hour <= 7)
+            {
+                AvaliacaoRequest.barraca = CurrentBarraca._id;
+                AvaliacaoRequest.dtvotacao = DateNow.ToString();
+                await navigationXamarin.PushPopupAsync(new VotePage());
+            }
+            else
+            {
+                await dialogServices.ShowMessage("Aviso", "Você só pode avaliar uma Barraca das 19 Hrs até as 7 da manhã! " + DateNow.ToString());
+            }
+           
+           // 
             
         }
         public ICommand CloseCommand { get { return new RelayCommand(Close); } }
@@ -261,7 +268,8 @@ namespace FestaMilho.ViewModel
         public ICommand Avaliar2Command { get { return new RelayCommand(PostAvaliacao); } }
         public async void PostAvaliacao()
         {
-            await navigationXamarin.PopAllPopupAsync();
+            await navigationXamarin.PushPopupAsync(new LoadingPop());
+            await navigationXamarin.PopPageAllDelay(5000);
 
 
         }
