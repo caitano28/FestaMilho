@@ -28,7 +28,15 @@
                 <Setter Property="TextColor" Value="{StaticResource TextEntryColor}"/>
                 <Setter Property="FontSize" Value="18"/>
             </Style>
-            
+
+            <Style x:Key="LabelGrid" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextLabelColor}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+
             <Style x:Key="ButtonInicial" TargetType="Button">
                 <Setter Property="BorderRadius" Value="10"/>
                 <Setter Property="TextColor" Value="White"/>

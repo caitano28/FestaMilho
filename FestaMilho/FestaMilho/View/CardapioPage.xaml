@@ -17,30 +17,69 @@
             <custom:MySearch Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
                        Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
-            <StackLayout Padding="8" BackgroundColor="#E6E7E8" HeightRequest="15">
-                <Label Text="{Binding CardapioFilter, StringFormat='Pesquisando por: {0}'}" />
-            </StackLayout>
-
-            <StackLayout Padding="8">
-                
-                <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          HeightRequest="150" SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}">
-                </ListView>
-           
-            </StackLayout>
+          
 
             <custom:MySearch Placeholder="Onde Deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
                        Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
-            <StackLayout Padding="8" BackgroundColor="#E6E7E8" HeightRequest="15">
-                <Label Text="{Binding BarracaFilter, StringFormat='Pesquisando por: {0}'}" />
-            </StackLayout>
+            <StackLayout Margin="0,30,0,0" Padding="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
+                                 BackgroundColor="{StaticResource MenuColor}"
+                                 HeightRequest="125">
+                        <StackLayout Padding="5">
+                            <Image Source="trofeu" WidthRequest="90" HeightRequest="90" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="Ranking" Style="{StaticResource LabelGrid}"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RankingCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" 
+                                 BackgroundColor="{StaticResource MenuColor}">
+                        <StackLayout Padding="5">
+                            <Image Source="cardapio" WidthRequest="90" HeightRequest="90" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="Cardapio" Style="{StaticResource LabelGrid}"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CardapioCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                                 BackgroundColor="{StaticResource MenuColor}">
+                        <StackLayout Padding="5">
+                            <Image Source="mapa" WidthRequest="90" HeightRequest="90" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="Mapa" Style="{StaticResource LabelGrid}"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MapaCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    
+                    <!--<StackLayout Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" 
+                                 BackgroundColor="{StaticResource MenuColor}">
+                        <StackLayout Padding="5">
+                            <Image Source="gerencial" WidthRequest="90" HeightRequest="90" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="Gerencial" Style="{StaticResource LabelGrid}"/>
+                        </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GerencialCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>-->
 
-            <StackLayout Padding="8">
-                <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          HeightRequest="150" SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
-                </ListView>
-
+                </Grid>
             </StackLayout>
 
         </StackLayout>

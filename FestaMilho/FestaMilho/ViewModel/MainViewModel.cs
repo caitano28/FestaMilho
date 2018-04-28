@@ -228,17 +228,38 @@ namespace FestaMilho.ViewModel
         } //insere barracas no sq lite
 
         public ICommand BuscarCommand { get { return new RelayCommand(BuscaCardapio); } }
-        public void BuscaCardapio()
+        public async void BuscaCardapio()
         {
             var list = dataService.GetCardapios(CardapioFilter);
             ReloadCardapios(list);
+            await navigationXamarin.PushPopupAsync(new ListCardapioPop());
         }//caixadebusca
 
+
+        #region MenuTelaInicial
+        public ICommand RankingCommand { get { return new RelayCommand(Ranking); } }
+        public ICommand CardapioCommand { get { return new RelayCommand(Cardapio); } }
+        public ICommand MapaCommand { get { return new RelayCommand(Mapa); } }
+        public async void Ranking()
+        {
+            await navigationServices.Navigate("Rank");
+        }
+        public async void Cardapio()
+        {
+            await navigationServices.Navigate("Cardapio");
+        }
+        public async void Mapa()
+        {
+            await navigationServices.Navigate("Stand");
+        }
+        #endregion
+
         public ICommand BuscarBarracaCommand { get { return new RelayCommand(BuscaBarraca); } }
-        public void BuscaBarraca()
+        public async void BuscaBarraca()
         {
             var list = dataService.GetBarracas(BarracaFilter);
             ReloadBarracas(list);
+            await navigationXamarin.PushPopupAsync(new ListBarracaPop());
         }//caixadebusca
         public ICommand AvaliarCommand { get { return new RelayCommand(AvaliarBarraca); } }
         public async void AvaliarBarraca()

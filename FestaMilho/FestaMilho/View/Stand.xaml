@@ -27,7 +27,7 @@
                        FontAttributes="Bold" TextColor="Black"/>
 
                 <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          HeightRequest="200" SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
+                          SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
                 </ListView>
 
             </StackLayout>

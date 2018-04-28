@@ -12,11 +12,13 @@ namespace FestaMilho.ViewModel
     {
         private DataService dataService;
         private NavigationServices navigationServices;
+        private NavigationXamarin navigationXamarin;
         public ICommand DetalhesBarracaCommand { get { return new RelayCommand(Detalhes); } } //MvvmLightLibs nuget
         public CardapioItemViewModel()
         {
+            navigationXamarin = new NavigationXamarin();
             navigationServices = new NavigationServices();
-           dataService = new DataService();
+            dataService = new DataService();
         }
         private async void Detalhes()
         {
@@ -46,8 +48,8 @@ namespace FestaMilho.ViewModel
                 mainViewModel.SetCurrentCardapio(cardapioItemViewModel);
                 mainViewModel.SetCurrentBarraca(barracaItemViewModel);
             }
-           
-   
+
+            await navigationXamarin.PopAllPopupAsync();
             await navigationServices.Navigate("CardapioDetailPage");
         }
     }

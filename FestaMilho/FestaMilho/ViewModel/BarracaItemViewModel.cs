@@ -12,11 +12,13 @@ namespace FestaMilho.ViewModel
     {
         private DataService dataService;
         private NavigationServices navigationServices;
+        private NavigationXamarin navigationXamarin;
         public ICommand DetalhesBarracaCommand { get { return new RelayCommand(Detalhes); } } //MvvmLightLibs nuget
 
 
         public BarracaItemViewModel()
         {
+            navigationXamarin = new NavigationXamarin();
             navigationServices = new NavigationServices();
             dataService = new DataService();
         }
@@ -36,6 +38,7 @@ namespace FestaMilho.ViewModel
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.SetCurrentBarraca(barracaItemViewModel);
             mainViewModel.SetCurrentListCardapio(Cardapio);
+            await navigationXamarin.PopAllPopupAsync();
             await navigationServices.Navigate("BarracaDetailPage");
         }
     }
