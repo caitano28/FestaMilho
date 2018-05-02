@@ -11,7 +11,8 @@
                     iOS="0,20,0,0">
         </OnPlatform>
     </ContentPage.Padding>
-    <StackLayout Margin="0,40,0,0">
+    <StackLayout Margin="0,40,0,0" 
+                 BackgroundColor="{StaticResource MenuColor}">
         <StackLayout Orientation="Horizontal">
             <Image Source="logomilho2.png"
                    WidthRequest="290"
@@ -22,15 +23,19 @@
             </Image>
         </StackLayout>
         <BoxView Style="{StaticResource LinhaBox}"/>
-        <StackLayout>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource MenuColor}">
     <ListView
      SeparatorVisibility="Default"
      ItemsSource="{Binding Menu}"
+      VerticalOptions="FillAndExpand"
+        BackgroundColor="{StaticResource MenuColor}"
      HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid BackgroundColor="{StaticResource MenuColor}">
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding NavigateCommand}">
                                     
