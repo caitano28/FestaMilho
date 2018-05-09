@@ -20,8 +20,8 @@
 
             <StackLayout Padding="8">
             <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-
-            <custom:MyEntry x:Name="TxtEmail" Placeholder="Digite seu e-mail*" 
+                <Label Text="E-mail" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
+                <custom:MyEntry x:Name="TxtEmail" Placeholder="Digite seu e-mail*" 
                             Keyboard="Email" Text="{Binding Email, Mode=TwoWay}"
                             Style="{StaticResource EntryPadrao}" />
             

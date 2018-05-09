@@ -22,31 +22,31 @@
             <StackLayout Padding="8">
 
             <Label x:Name="TxtAlerta" TextColor="Red" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-
+                <Label Text="Nome" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Digite seu nome*"
                          x:Name="TxtNome"
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Text" 
                          Text="{Binding Nome, Mode=TwoWay}"/>
-
+                <Label Text="E-mail" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Digite seu e-mail*"
                          x:Name="TxtEmail"
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Email" 
                          Text="{Binding Email, Mode=TwoWay}"/>
-                
+                <Label Text="Confirmação do E-Mail" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Confirme seu e-mail*"
                          x:Name="TxtConfirmeMail"
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Email" 
                          Text="{Binding ConfirmaEmail, Mode=TwoWay}"/>
-
+                <Label Text="Senha" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Digite sua senha*"
                          x:Name="TxtSenha"
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Text" IsPassword="True"
                          Text="{Binding Senha, Mode=TwoWay}"/>
-                
+                <Label Text="Confirmação da Senha" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Confirme sua senha*"
                          x:Name="TxtConfirmeSenha"
                          Style="{StaticResource EntryPadrao}" 

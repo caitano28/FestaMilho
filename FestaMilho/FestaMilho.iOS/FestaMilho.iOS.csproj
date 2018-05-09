@@ -167,40 +167,48 @@
     <BundleResource Include="Resources\cardapio.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\trofeu.png" />
+    <BundleResource Include="Resources\trofeu.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\close_circle_button.png" />
+    <BundleResource Include="Resources\close_circle_button.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\fasipe.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\icon.png" />
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\logofasipe.png" />
+    <BundleResource Include="Resources\logofasipe.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logomilho2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mapa.png" />
+    <BundleResource Include="Resources\mapa.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mapa23.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\milho.png" />
+    <BundleResource Include="Resources\milho.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\sair.png" />
+    <BundleResource Include="Resources\sair.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\sobre.png" />
+    <BundleResource Include="Resources\sobre.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Media.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\FestaMilho\FestaMilho.projitems" Label="Shared" />

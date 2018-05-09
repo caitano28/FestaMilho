@@ -87,13 +87,13 @@ namespace FestaMilho.ViewModel
             //IsRunning = true;
             await navigationServices.SetLoadingPage();
             var response = await apiService.Cadastrar(cadastro);
-            await navigationServices.PopPage();
+            await navigationServices.PopPageNormal();
             //IsRunning = false;
             if (response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Tudo Certo!", response.Message);
                 // navigationServices.SetLoginPage();
-                await navigationServices.PopPage();
+                await navigationServices.PopPageNormal();
            
             }
             else

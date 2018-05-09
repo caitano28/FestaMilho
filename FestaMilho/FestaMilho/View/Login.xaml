@@ -13,7 +13,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="8" Margin="0,70,0,0">
+        <StackLayout Padding="8" Margin="0,50,0,0">
 
             <StackLayout Orientation="Horizontal">
                 <Image Source="logomilho2.png"
@@ -26,10 +26,12 @@
             </StackLayout>
 
             <StackLayout Padding="8" Margin="0,5,0,0">
+                <Label Text="E-mail" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="E-mail" 
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Email" 
                          Text="{Binding Email, Mode=TwoWay}"/>
+                <Label Text="Senha" HorizontalOptions="Start" TextColor="{StaticResource TextLabelColor}"/>
                 <custom:MyEntry Placeholder="Senha" 
                          Style="{StaticResource EntryPadrao}" 
                          Keyboard="Text" IsPassword="True"

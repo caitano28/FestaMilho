@@ -60,6 +60,10 @@ namespace FestaMilho.Services
         {
             await App.Navigator.PushAsync(new Loading(true));
         }
+        public async Task PopPageNormal()
+        {
+            await App.Navigator.PopAsync();
+        }
         public async Task PopPage()
         {
             await Task.Delay(5000);
