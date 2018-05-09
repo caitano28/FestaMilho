@@ -18,7 +18,7 @@
                 <Image Source="mapa23.png" WidthRequest="350" HeightRequest="175"  HorizontalOptions="Center"/>
             </StackLayout>
 
-            <custom:MySearch Placeholder="Onde Deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
+            <custom:MySearch Placeholder="Onde deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
                        Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
             <StackLayout Padding="8">

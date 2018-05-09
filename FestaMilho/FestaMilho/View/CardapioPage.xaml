@@ -19,7 +19,7 @@
 
           
 
-            <custom:MySearch Placeholder="Onde Deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
+            <custom:MySearch Placeholder="Onde deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
                        Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
             <StackLayout Margin="0,30,0,0" Padding="8">
@@ -50,7 +50,7 @@
                                  BackgroundColor="{StaticResource MenuColor}">
                         <StackLayout Padding="5">
                             <Image Source="cardapio" WidthRequest="90" HeightRequest="90" HorizontalOptions="CenterAndExpand"/>
-                            <Label Text="Cardapio" Style="{StaticResource LabelGrid}"/>
+                            <Label Text="Cardápio" Style="{StaticResource LabelGrid}"/>
                         </StackLayout>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding CardapioCommand}"/>
