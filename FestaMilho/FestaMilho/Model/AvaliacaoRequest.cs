@@ -6,9 +6,9 @@ namespace FestaMilho.Model
 {
     public class AvaliacaoRequest
     {
-        public double nota { get; set; }
         public string barraca { get; set; }
-        public string dtvotacao { get; set; }
+        public string data { get; set; }
+        public double nota { get; set; }   
     }
 
 }

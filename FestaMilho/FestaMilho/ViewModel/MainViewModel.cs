@@ -265,10 +265,10 @@ namespace FestaMilho.ViewModel
         public async void AvaliarBarraca()
         {
             DateNow = DateTime.Now;
-            if (DateNow.Hour >= 19 || DateNow.Hour <= 7)
+            if (DateNow.Hour >= 13 || DateNow.Hour <= 7)
             {
                 AvaliacaoRequest.barraca = CurrentBarraca._id;
-                AvaliacaoRequest.dtvotacao = DateNow.ToString();
+                AvaliacaoRequest.data = DateNow.ToString("yyyy-MM-ddTHH:mm:ss");
                 await navigationXamarin.PushPopupAsync(new VotePage());
             }
             else
@@ -290,7 +290,19 @@ namespace FestaMilho.ViewModel
         public async void PostAvaliacao()
         {
             await navigationXamarin.PushPopupAsync(new LoadingPop());
+            var Voto = new AvaliacaoRequest
+            {
+                barraca = CurrentBarraca._id,
+                data = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"),
+                nota = AvaliacaoRequest.nota
+            };
+            var response = await apiService.Votar(Voto);
             await navigationXamarin.PopPageAllDelay(5000);
+            if (!response.IsSuccess)
+            {
+                await dialogServices.ShowMessage("Erro", response.Message);
+                return;
+            }
 
 
         }

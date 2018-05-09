@@ -74,6 +74,52 @@ namespace FestaMilho.Services
                 //throw ex;
             }
         }
+        public async Task<Response> Votar(AvaliacaoRequest avaliacao)
+        {
+            try
+            {
+                var jsonRequest = JsonConvert.SerializeObject(avaliacao);
+                var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+                var uri = new Uri(String.Format("{0}/votacao", ServidorApi));
+                var user = dataService.GetUser();
+                var bearer = String.Format("bearer {0}", user.Token);
+                client.DefaultRequestHeaders.Add("Authorization", bearer);
+                HttpResponseMessage response = null;
+
+                response = await client.PostAsync(uri, httpContent);
+                var result = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = JsonConvert.DeserializeObject<ObjectError>(result);
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = error.error,
+
+                    };
+
+                }
+
+                var voto = JsonConvert.DeserializeObject<AvaliacaoRequest>(result);
+
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Avaliada!",
+                    Result = voto,
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+                throw;
+            }
+        }
         public async Task<Response> Cadastrar(CadastroRequest cadastro)
         {
             try
