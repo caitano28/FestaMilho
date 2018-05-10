@@ -11,7 +11,8 @@
 Z
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="Navigator"
-                        BarBackgroundColor="{StaticResource MenuColor}">
+                        BarBackgroundColor="{StaticResource MenuColor}"
+                        BarTextColor="White">
             <x:Arguments>
                 <View:CardapioPage>
                 </View:CardapioPage>

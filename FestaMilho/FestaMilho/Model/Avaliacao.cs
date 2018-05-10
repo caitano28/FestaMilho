@@ -4,10 +4,11 @@ using System.Text;
 
 namespace FestaMilho.Model
 {
+
     public class Avaliacao
     {
-        public string Usuario { get; set; }
-        public DateTime Data { get; set; }
-        public double Nota { get; set; }
+        public string barraca { get; set; }
+        // public string data { get; set; }
+        public decimal nota { get; set; }
     }
 }

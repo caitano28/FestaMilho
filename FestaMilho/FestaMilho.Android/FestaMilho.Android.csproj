@@ -147,7 +147,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable-hdpi\logomilho2.png" />
     <AndroidResource Include="Resources\drawable-hdpi\mapa.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\mapa23.png" />
     <AndroidResource Include="Resources\drawable-hdpi\milho.png" />
     <AndroidResource Include="Resources\drawable-hdpi\sair.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Search_Round.xml" />
@@ -162,7 +161,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable-mdpi\logomilho2.png" />
     <AndroidResource Include="Resources\drawable-mdpi\mapa.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\mapa23.png" />
     <AndroidResource Include="Resources\drawable-mdpi\milho.png" />
     <AndroidResource Include="Resources\drawable-mdpi\sair.png" />
     <AndroidResource Include="Resources\drawable-mdpi\Search_Round.xml" />
@@ -176,7 +174,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\logomilho2.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\mapa.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\mapa23.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\milho.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\sair.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Search_Round.xml" />
@@ -190,7 +187,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\logomilho2.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\mapa.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\mapa23.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\milho.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\sair.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Search_Round.xml" />
@@ -205,7 +201,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\logomilho2.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\mapa.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\mapa23.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\milho.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\sair.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Search_Round.xml" />
@@ -214,7 +209,6 @@
     <AndroidResource Include="Resources\drawable\logofasipe.png" />
     <AndroidResource Include="Resources\drawable\close_circle_button.png" />
     <AndroidResource Include="Resources\drawable\logomilho2.png" />
-    <AndroidResource Include="Resources\drawable\mapa23.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\trofeu.png" />
@@ -233,6 +227,78 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Search_Round.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mapa2.png" />
   </ItemGroup>
   <Import Project="..\FestaMilho\FestaMilho.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

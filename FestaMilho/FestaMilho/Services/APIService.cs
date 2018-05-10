@@ -74,16 +74,22 @@ namespace FestaMilho.Services
                 //throw ex;
             }
         }
-        public async Task<Response> Votar(AvaliacaoRequest avaliacao)
+        public async Task<Response> Votar (Avaliacao avaliacao)
         {
             try
             {
+
                 var jsonRequest = JsonConvert.SerializeObject(avaliacao);
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
-                var uri = new Uri(String.Format("{0}/votacao", ServidorApi));
                 var user = dataService.GetUser();
                 var bearer = String.Format("bearer {0}", user.Token);
+                client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", bearer);
+                var uri = new Uri(String.Format("{0}/votacao/", ServidorApi));
+                
+                
+                
+               
                 HttpResponseMessage response = null;
 
                 response = await client.PostAsync(uri, httpContent);
@@ -100,13 +106,13 @@ namespace FestaMilho.Services
 
                 }
 
-                var voto = JsonConvert.DeserializeObject<AvaliacaoRequest>(result);
+                var voto = JsonConvert.DeserializeObject<Avaliacao>(result);
 
                 return new Response
                 {
                     IsSuccess = true,
                     Message = "Avaliada!",
-                    Result = voto,
+                   // Result = voto,
                 };
 
             }

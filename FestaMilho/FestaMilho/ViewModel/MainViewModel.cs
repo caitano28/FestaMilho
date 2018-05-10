@@ -268,7 +268,7 @@ namespace FestaMilho.ViewModel
             if (DateNow.Hour >= 13 || DateNow.Hour <= 7)
             {
                 AvaliacaoRequest.barraca = CurrentBarraca._id;
-                AvaliacaoRequest.data = DateNow.ToString("yyyy-MM-ddTHH:mm:ss");
+               // AvaliacaoRequest.data = DateNow.ToString("yyyy-MM-ddTHH:mm:ss");
                 await navigationXamarin.PushPopupAsync(new VotePage());
             }
             else
@@ -290,11 +290,11 @@ namespace FestaMilho.ViewModel
         public async void PostAvaliacao()
         {
             await navigationXamarin.PushPopupAsync(new LoadingPop());
-            var Voto = new AvaliacaoRequest
+            var Voto = new Avaliacao
             {
                 barraca = CurrentBarraca._id,
-                data = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"),
-                nota = AvaliacaoRequest.nota
+              //  data = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"),
+                nota = (decimal)AvaliacaoRequest.nota
             };
             var response = await apiService.Votar(Voto);
             await navigationXamarin.PopPageAllDelay(5000);

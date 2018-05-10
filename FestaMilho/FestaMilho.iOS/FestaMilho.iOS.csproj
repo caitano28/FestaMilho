@@ -188,9 +188,6 @@
     <BundleResource Include="Resources\mapa.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mapa23.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\milho.png" />
   </ItemGroup>
   <ItemGroup>
