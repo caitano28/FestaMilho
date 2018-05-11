@@ -207,6 +207,99 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapaModelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapa30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\FestaMilho\FestaMilho.projitems" Label="Shared" />
 </Project>
