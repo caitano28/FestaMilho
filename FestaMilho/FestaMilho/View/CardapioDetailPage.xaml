@@ -21,7 +21,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    
                 </Grid.RowDefinitions>
 
                 <StackLayout  BackgroundColor="{StaticResource MenuColor}" BindingContext="{Binding CurrentCardapio}" Grid.Row="0">
@@ -66,13 +66,13 @@
                     </StackLayout>
 
                 </StackLayout>
-                <StackLayout Grid.Row="2">
-                    <Image x:Name="ImgLocal" WidthRequest="250" HeightRequest="125"  HorizontalOptions="Center"/>
-                </StackLayout>
+               
                 
             </Grid>
+            <StackLayout Grid.Row="2">
+                <Image x:Name="ImgLocal" WidthRequest="400" HeightRequest="533"  HorizontalOptions="Center"/>
+            </StackLayout>
 
-            
 
         </StackLayout>
         
