@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FestaMilho.Templates.ClassificacaoViewCell">
+    <ViewCell.View>
+        <Grid BackgroundColor="#EA8610" Margin="0,3,0,3" >
+            <!--<Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding DetalhesBarracaCommand}">
+
+                </TapGestureRecognizer>
+            </Grid.GestureRecognizers>-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Barraca" FontSize="9" FontAttributes="Bold,Italic" TextColor="WhiteSmoke" 
+                                           HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0" />
+            <Label Text="Nota" FontSize="9" FontAttributes="Bold,Italic" TextColor="WhiteSmoke" 
+                                           HorizontalOptions="Start" Grid.Row="0" Grid.Column="2"/>
+            <Image Source="trofeu" Grid.Row="0" Grid.Column="3" WidthRequest="25" HeightRequest="25" Grid.RowSpan="2" VerticalOptions="Center"/>
+            <Label Text="{Binding Nome}" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
+                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0"/>
+            <Label Text="{Binding Nota, StringFormat='{0:F2}'}" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
+                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

@@ -71,7 +71,7 @@ namespace FestaMilho.Services
             using (var dt = new Conexao())
             {
                 return dt.GetList<Rank>()
-                .OrderBy(i => i.Nota)
+                .OrderBy(i => i.Nota).Reverse()
                 .ToList();
             }
         }

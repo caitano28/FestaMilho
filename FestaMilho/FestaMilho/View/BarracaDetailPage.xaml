@@ -37,17 +37,18 @@
 
 
                 </StackLayout>
+                <StackLayout Padding="8" >
+
+                    <Button Text="Avaliar barraca" Style="{StaticResource ButtonSecundario}" Command="{Binding AvaliarCommand}"/>
+                </StackLayout>
+
 
             </StackLayout>
             <StackLayout>
                 <Image x:Name="ImgLocal" WidthRequest="400" HeightRequest="533"  HorizontalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout Padding="8" >
-                
-                <Button Text="Avaliar barraca!" Style="{StaticResource ButtonSecundario}" Command="{Binding AvaliarCommand}"/>
-            </StackLayout>
-
+           
             <StackLayout Padding="8">
 
                 <Label Text="Cardapio da Barraca" HorizontalTextAlignment="Start" FontSize="16" 

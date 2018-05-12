@@ -92,6 +92,10 @@
                 <templates:BarracaViewCell/>
             </DataTemplate>
 
+            <DataTemplate  x:Key="ClassificacaoViewCell">
+                <templates:ClassificacaoViewCell/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

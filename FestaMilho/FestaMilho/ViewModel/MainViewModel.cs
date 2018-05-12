@@ -161,7 +161,7 @@ namespace FestaMilho.ViewModel
 
                         dataService.InsertRank(rank);
                         Contador++;
-                        if (Contador >= 4)
+                        if (Contador > 4)
                         {
                             Contador = 0;
                         }
@@ -294,6 +294,12 @@ namespace FestaMilho.ViewModel
             await navigationServices.Navigate("Stand");
         }
         #endregion
+
+        public ICommand PesquisarBarracaCommand { get { return new RelayCommand(PesquisaBarraca); } }
+        public async void PesquisaBarraca()
+        {
+            await navigationXamarin.PushPopupAsync(new ListBarracaPop());
+        }
 
         public ICommand BuscarBarracaCommand { get { return new RelayCommand(BuscaBarraca); } }
         public async void BuscaBarraca()
