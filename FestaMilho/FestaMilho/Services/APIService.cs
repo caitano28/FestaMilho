@@ -188,7 +188,7 @@ namespace FestaMilho.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = ex.Message,
+                    Message = "Falha na conexão!",
                 };
                 throw;
             }
