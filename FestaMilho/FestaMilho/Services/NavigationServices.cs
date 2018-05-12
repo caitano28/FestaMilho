@@ -18,7 +18,7 @@ namespace FestaMilho.Services
             switch (pageName)
             {
                 case "Rank":
-                    await App.Navigator.PushAsync(new Rank());
+                    await App.Navigator.PushAsync(new View.Rank());
                     break;
                 case "Cardapio":
                     await App.Navigator.PushAsync(new CardapioPage2());

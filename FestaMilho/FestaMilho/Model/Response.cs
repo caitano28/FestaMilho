@@ -15,6 +15,6 @@ namespace FestaMilho.Model
 
         public List<CardapioReturn> CardapioResult { get; set; }
         public List<BarracaReturn> BarracaResult { get; set; }
-
+        public List<MediaAvaliacao> MediaAvaliacao { get; internal set; }
     }
 }

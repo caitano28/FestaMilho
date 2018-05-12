@@ -30,7 +30,7 @@ namespace FestaMilho.ViewModel
         public ObservableCollection<CardapioItemViewModel> Cardapios { get; set; }
         public ObservableCollection<BarracaItemViewModel> Barracas { get; set; }
         public ObservableCollection<CardapioItemViewModel> Cardapios2 { get; set; }
-
+        public ObservableCollection<MediaAvaliacao> ListRank { get; set; }
         private bool _refreshList;
         public bool RefreshList
         {
@@ -111,6 +111,7 @@ namespace FestaMilho.ViewModel
             Cardapios = new ObservableCollection<CardapioItemViewModel>();
             Cardapios2 = new ObservableCollection<CardapioItemViewModel>();
             Barracas = new ObservableCollection<BarracaItemViewModel>();
+            ListRank = new ObservableCollection<MediaAvaliacao>();
             CurrentCardapio = new CardapioItemViewModel();
             CurrentBarraca = new BarracaItemViewModel();
             apiService = new APIService();
@@ -123,15 +124,55 @@ namespace FestaMilho.ViewModel
             LoadMenu();
             LoadCardapio();
             LoadBarraca();
+            LoadRank();
         }
 
-        
+
 
 
         #endregion
         #region Metodos
+        public async void LoadRank() //Carrega o Rank no banco local
+        {
+            var reponse = await apiService.GetMedia();
+            if (reponse.IsSuccess)
+            {
+                string [] Cor = { "#FF0000","#00FF00","#0026FF","#FBFF00","#FC9B00"} ;
+                var rankTable = dataService.GetRank();
+                if (rankTable != null)
+                {
+                    conexao.DropTable<Model.Rank>();
+                    conexao.CreateTable<Model.Rank>();
+                }
+                var Contador = 0;
+                foreach (var x in reponse.MediaAvaliacao)
+                {     
+                    
+                    
+                    var list = dataService.GetBarracaID(x.barraca);
+                    foreach (var y in list)
+                    {
+                        var rank = new Model.Rank
+                        {
+                          Nome = y.nome,
+                          Nota = (double)x.media,
+                          Cor = Cor[Contador]
+                        };
 
-        private async void LoadCardapio()
+                        dataService.InsertRank(rank);
+                        Contador++;
+                        if (Contador >= 4)
+                        {
+                            Contador = 0;
+                        }
+                    }
+                }
+
+            }
+
+        }
+                    
+        public async void LoadCardapio() //Carrega os cardapios
         {
             var response = await apiService.GetCardapio();
             if (response.IsSuccess)
@@ -160,9 +201,9 @@ namespace FestaMilho.ViewModel
             }
 
             return;
-        } // carrega lista de cardapios
+        } 
 
-        private void InsertCardapioLocal()
+        private void InsertCardapioLocal()// insere cardapio no sq lite
         {
             foreach (var x in Cardapios)
             {
@@ -177,9 +218,9 @@ namespace FestaMilho.ViewModel
                 };
                 var insert = dataService.InsertCardapio(c);
             }
-        } // insere cardapio no sq lite
+        } 
 
-        private async void LoadBarraca()
+        public async void LoadBarraca()//carrega lista de barracas
         {
             var response = await apiService.GetBarraca();
             if (response.IsSuccess)
@@ -206,9 +247,9 @@ namespace FestaMilho.ViewModel
             }
 
             return;
-        }//carrega lista de barracas
+        }
 
-        private void InsertBarracaLocal()
+        private void InsertBarracaLocal()//insere barracas no sq lite
         {
             foreach (var x in Barracas)
             {
@@ -225,7 +266,7 @@ namespace FestaMilho.ViewModel
                 };
                 var insert = dataService.InsertBarraca(c);
             }
-        } //insere barracas no sq lite
+        } 
 
         public ICommand BuscarCommand { get { return new RelayCommand(BuscaCardapio); } }
         public async void BuscaCardapio()
@@ -268,7 +309,6 @@ namespace FestaMilho.ViewModel
             if (DateNow.Hour >= 13 || DateNow.Hour <= 7)
             {
                 AvaliacaoRequest.barraca = CurrentBarraca._id;
-               // AvaliacaoRequest.data = DateNow.ToString("yyyy-MM-ddTHH:mm:ss");
                 await navigationXamarin.PushPopupAsync(new VotePage());
             }
             else
@@ -293,7 +333,6 @@ namespace FestaMilho.ViewModel
             var Voto = new Avaliacao
             {
                 barraca = CurrentBarraca._id,
-              //  data = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"),
                 nota = (decimal)AvaliacaoRequest.nota
             };
             var response = await apiService.Votar(Voto);
@@ -303,8 +342,6 @@ namespace FestaMilho.ViewModel
                 await dialogServices.ShowMessage("Erro", response.Message);
                 return;
             }
-
-
         }
         public ICommand WebSiteCommand { get { return new RelayCommand(WebSite); } }
         public async void WebSite()

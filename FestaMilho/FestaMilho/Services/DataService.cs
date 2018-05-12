@@ -66,6 +66,16 @@ namespace FestaMilho.Services
             }
         }
 
+        public List<Rank> GetRankNota()
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.GetList<Rank>()
+                .OrderBy(i => i.Nota)
+                .ToList();
+            }
+        }
+
         public List<CardapioReturn> GetCardapioID(string id)
         {
             using (var dt = new Conexao())
@@ -74,6 +84,33 @@ namespace FestaMilho.Services
                 .Where(i => (i.barraca == id))
                 .OrderBy(i=> i.nomeprato)
                 .ToList();
+            }
+        }
+
+        public Response InsertRank(Rank rank)
+        {
+            try
+            {
+                using (var dt = new Conexao())
+                {
+                    dt.Add(rank);
+                }
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "ok",
+                    Result = rank
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+                throw;
             }
         }
 
@@ -101,6 +138,15 @@ namespace FestaMilho.Services
                     Message = ex.Message
                 };
                 throw;
+            }
+        }
+
+        public Model.Rank GetRank()
+        {
+            using (var dt = new Conexao())
+            {
+                return dt.FirstRank();
+
             }
         }
         public Usuario GetUser()

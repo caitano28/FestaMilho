@@ -32,7 +32,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Curso.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\CasdastroRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\LoginRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MediaAvaliacao.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\ObjectError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Rank.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\RecuperarRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />

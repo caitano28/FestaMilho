@@ -19,11 +19,11 @@ namespace FestaMilho.Data
         {
             _platform = DependencyService.Get<ISQLitePlatform>();
 
-            _conexao = _platform.GetConnection();
-                                                    
+            _conexao = _platform.GetConnection();                
             _conexao.CreateTable<Usuario>();
             _conexao.CreateTable<CardapioReturn>();
             _conexao.CreateTable<BarracaReturn>();
+            _conexao.CreateTable<Rank>();
         }
         public void DropTable<T>() where T : class
         {
@@ -56,6 +56,10 @@ namespace FestaMilho.Data
         public Usuario FirstUser() 
         {
             return _conexao.Table<Usuario>().FirstOrDefault();
+        }
+        public Model.Rank FirstRank()
+        {
+            return _conexao.Table<Model.Rank>().FirstOrDefault();
         }
         public CardapioReturn FirstCardapio()
         {
