@@ -13,7 +13,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="8">
+        <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <StackLayout BackgroundColor="#EA8610">
 
@@ -48,14 +48,14 @@
                 <Image x:Name="ImgLocal" WidthRequest="400" HeightRequest="533"  HorizontalOptions="Center"/>
             </StackLayout>
 
-           
-            <StackLayout Padding="8">
+
+            <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                 <Label Text="Cardapio da Barraca" HorizontalTextAlignment="Start" FontSize="16" 
                        FontAttributes="Bold" TextColor="Black"/>
                 
                 <ListView ItemsSource="{Binding Cardapios2}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          HeightRequest="250" SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}">
+                           SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}" VerticalOptions="FillAndExpand">
                 </ListView>
 
             </StackLayout>

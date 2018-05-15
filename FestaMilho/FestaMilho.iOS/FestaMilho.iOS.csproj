@@ -199,14 +199,30 @@
     <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40.png" />
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\mapaModelo.png" />

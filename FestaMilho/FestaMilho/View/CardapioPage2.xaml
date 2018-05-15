@@ -5,14 +5,15 @@
              xmlns:custom="clr-namespace:FestaMilho.Renderers"
              Title="Milhosoft Maps"
              BackgroundColor="{StaticResource BackgroundColor}"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             >
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0,20,0,0">
         </OnPlatform>
     </ContentPage.Padding>
-    <ScrollView>
-        <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
+    <ScrollView >
+        <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <custom:MySearch Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
                        Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
@@ -21,10 +22,10 @@
                 <Label Text="{Binding CardapioFilter, StringFormat='Pesquisando por: {0}'}" />
             </StackLayout>
 
-            <StackLayout Padding="8">
+            <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 
                 <ListView ItemsSource="{Binding Cardapios}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}">
+                          SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}" VerticalOptions="FillAndExpand">
                 </ListView>
            
             </StackLayout>

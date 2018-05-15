@@ -12,7 +12,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8">
+        <StackLayout Margin="0,5,0,0" Spacing="10" Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             
             <custom:MySearch Placeholder="O que deseja comer?" SearchCommand="{Binding BuscarCommand}"
                        Text="{Binding CardapioFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>

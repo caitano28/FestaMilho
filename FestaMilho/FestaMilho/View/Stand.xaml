@@ -12,7 +12,7 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-        <StackLayout Padding="8">
+        <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <StackLayout>
                 <Image Source="mapaModelo.png" WidthRequest="400" HeightRequest="533"  HorizontalOptions="Center"/>
@@ -21,13 +21,13 @@
             <custom:MySearch Placeholder="Onde deseja Comer?" SearchCommand="{Binding BuscarBarracaCommand}"
                        Text="{Binding BarracaFilter, Mode=TwoWay}" BackgroundColor="White" HeightRequest="50"/>
 
-            <StackLayout Padding="8">
+            <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                 <Label Text="Barracas da Festa" HorizontalTextAlignment="Start" FontSize="16" 
                        FontAttributes="Bold" TextColor="Black"/>
 
                 <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
-                          SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}">
+                          SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}" VerticalOptions="FillAndExpand">
                 </ListView>
 
             </StackLayout>

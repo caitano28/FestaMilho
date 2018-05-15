@@ -71,7 +71,7 @@ namespace FestaMilho.View
                 var Entrada = new Microcharts.Entry((float)(x.Nota))
                 {
                     Color = SKColor.Parse(x.Cor),
-                    ValueLabel = x.Nota.ToString(),
+                    ValueLabel = x.Nota.ToString("0.00"),
                     Label = x.Nome
                 };
                 entries.Add(Entrada);

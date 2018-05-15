@@ -13,8 +13,8 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ScrollView>
-        
-        <StackLayout Padding="8">
+
+        <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
                 <Image Source="trofeu" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
                 <Label Text="Melhores Colocadas" FontSize="20" FontAttributes="Bold" 
@@ -35,10 +35,11 @@
                    TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
 
-            <StackLayout Padding="8">
+            <StackLayout Padding="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                 <ListView x:Name="ListClassificacao" HasUnevenRows="True" HorizontalOptions="Center" 
-                          SeparatorVisibility="None" ItemTemplate="{StaticResource ClassificacaoViewCell}">
+                          SeparatorVisibility="None" ItemTemplate="{StaticResource ClassificacaoViewCell}"
+                          VerticalOptions="FillAndExpand">
                 </ListView>
 
             </StackLayout>
