@@ -84,11 +84,12 @@ namespace FestaMilho.ViewModel
                 senha = Senha,
             };
             var response = await apiService.Login(login);
-            await navigationServices.PopPage();
+            
             //IsRunning = false;
             if (!response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Erro", response.Message);
+                await navigationServices.PopPageNormal();
                 return;
             }
             else
@@ -97,10 +98,20 @@ namespace FestaMilho.ViewModel
                 {
                     email = Email, //comentar essa linha qd usar api
                     LembrarSenha = Remenbered,
+                    _id = response.Usuario.usuario._id,
+                    nivel = response.Usuario.usuario.nivel,
+                    nome = response.Usuario.usuario.nome,
                     senha = Senha,
-                    Token = response.Result.ToString(),
+                    Token = response.Usuario.token
                 }; //passar da api colocar (Usuario)response.Result;
                 dataService.InsertUser(usuario);
+                var currentuser = dataService.GetUser();
+                App.CurrentUser = currentuser;
+                var mainViewModel = MainViewModel.GetInstance();
+                mainViewModel.LoadCardapio();
+                mainViewModel.LoadBarraca();
+                mainViewModel.LoadRank();
+                await navigationServices.PopPageNormal();
                 App.Current.MainPage = new MasterPage();
             }
 

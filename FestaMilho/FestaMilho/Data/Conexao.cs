@@ -44,9 +44,9 @@ namespace FestaMilho.Data
             _conexao.Update(model);
         }
 
-        public void Delete<T>(T model)
+        public void Delete<T>(T model) where T : class
         {
-            _conexao.Delete(model);
+            _conexao.Delete<T>(model);
         }
 
         //public T Find<T>(int id) where T : class

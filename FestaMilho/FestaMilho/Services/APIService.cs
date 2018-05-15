@@ -256,19 +256,19 @@ namespace FestaMilho.Services
                     return new Response
                     {
                         IsSuccess = false,
+                        IsReLogin = true,
                         Message = error.error
                     };
 
                 }
-
-               
-                var user = JsonConvert.DeserializeObject<Usuario>(result);
+                var user = JsonConvert.DeserializeObject<LoginReturn>(result);
 
                 return new Response
                 {
                     IsSuccess = true,
                     Message = "Login Ok",
-                    Result = user.Token,
+                   // Result = user.Token,
+                    Usuario = user
                 };
 
             }

@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace FestaMilho.ViewModel
 {
@@ -122,16 +123,47 @@ namespace FestaMilho.ViewModel
             navigationXamarin = new NavigationXamarin();
             conexao = new Conexao();
             LoadMenu();
+            ValidaToken();
             LoadCardapio();
             LoadBarraca();
             LoadRank();
         }
 
-
-
-
         #endregion
         #region Metodos
+        private async void ValidaToken()
+        {
+            var user = dataService.GetUser();
+            if (user != null && user.LembrarSenha)
+            {
+                var login = new LoginRequest
+                {
+                    email = user.email,
+                    senha = user.senha
+                };
+                var response = await apiService.Login(login);
+                if (response.IsReLogin)
+                {
+                    await dialogServices.ShowMessage("Usuário Alterado", response.Message);
+                    await navigationServices.Navigate("Sair");
+                }
+                var usuario = new Usuario
+                {
+                    Id = user.Id,
+                    _id = user._id,
+                    nivel = response.Usuario.usuario.nivel,
+                    email = user.email, //comentar essa linha qd usar api
+                    LembrarSenha = true,
+                    senha = user.senha,
+                    Token = response.Usuario.token,
+                    nome = response.Usuario.usuario.nome
+
+                };
+                App.CurrentUser = usuario;
+                dataService.DeleteUser(usuario);
+                dataService.InsertUser(usuario);
+            }
+        }
         public async void LoadRank() //Carrega o Rank no banco local
         {
             var reponse = await apiService.GetMedia();

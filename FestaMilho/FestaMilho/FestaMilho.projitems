@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\Conexao.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Infraestructure\InstanceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISQLitePlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\LoginReturn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -39,6 +40,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioReturnLogin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MySearch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
