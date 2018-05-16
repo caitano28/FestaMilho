@@ -193,34 +193,67 @@
     <BundleResource Include="Resources\splash.png" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Media.xcassets\AppIcons.appiconset\Contents.json">
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 1024x768.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 1536x2048.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 2048x1536.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 640x1336.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 640x960.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\splash 768x1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Contents.json">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 1024x1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-60%402x.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 120x120.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 152x152px.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-76%402x.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 167x167.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 180x180.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small%402x.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 20x20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 29x29.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 40x40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 58x58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 60x60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 76x76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 80x80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 87x87.png">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
@@ -316,6 +349,69 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\mapa30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 2048x1536.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 640x960.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 640x1336.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 768x1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 1024x768.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splash 1536x2048.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 28x28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 60x60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 80x80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 87x87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 120x120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 166x166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 1024x1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 29x29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 58x58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 76x76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 152x152px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 167x167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon 180x180.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\FestaMilho\FestaMilho.projitems" Label="Shared" />

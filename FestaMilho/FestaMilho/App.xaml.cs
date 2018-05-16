@@ -29,7 +29,8 @@ namespace FestaMilho
             {
                 Navigator = new NavigationPage(new Login())
                 {
-                    BarBackgroundColor = Color.FromHex("#038118")
+                    BarBackgroundColor = Color.FromHex("#038118"),
+                    BarTextColor = Color.White
                 };
                 MainPage = Navigator;
             }
