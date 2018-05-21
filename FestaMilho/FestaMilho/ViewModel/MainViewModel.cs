@@ -146,23 +146,28 @@ namespace FestaMilho.ViewModel
                 {
                     await dialogServices.ShowMessage("Usuário Alterado", response.Message);
                     await navigationServices.Navigate("Sair");
+                    return;
                 }
-                var usuario = new Usuario
+                if (response.IsSuccess)
                 {
-                    Id = user.Id,
-                    _id = user._id,
-                    nivel = response.Usuario.usuario.nivel,
-                    email = user.email, //comentar essa linha qd usar api
-                    LembrarSenha = true,
-                    senha = user.senha,
-                    Token = response.Usuario.token,
-                    nome = response.Usuario.usuario.nome
+                    var usuario = new Usuario
+                    {
+                        Id = user.Id,
+                        _id = user._id,
+                        nivel = response.Usuario.usuario.nivel,
+                        email = user.email, //comentar essa linha qd usar api
+                        LembrarSenha = true,
+                        senha = user.senha,
+                        Token = response.Usuario.token,
+                        nome = response.Usuario.usuario.nome
 
-                };
-                App.CurrentUser = usuario;
-                dataService.DeleteUser(usuario);
-                dataService.InsertUser(usuario);
+                    };
+                    App.CurrentUser = usuario;
+                    dataService.DeleteUser(usuario);
+                    dataService.InsertUser(usuario);
+                }
             }
+                
         }
         public async void LoadRank() //Carrega o Rank no banco local
         {
@@ -374,12 +379,16 @@ namespace FestaMilho.ViewModel
                 nota = (decimal)AvaliacaoRequest.nota
             };
             var response = await apiService.Votar(Voto);
-            await navigationXamarin.PopPageAllDelay(5000);
+           
+            await navigationXamarin.PopAllPopupAsync();
             if (!response.IsSuccess)
             {
                 await dialogServices.ShowMessage("Erro", response.Message);
+                AvaliacaoRequest.nota = 0;
                 return;
             }
+            await dialogServices.ShowMessage("Parabéns!", "Voto Realizado com Sucesso!");
+            AvaliacaoRequest.nota = 0;
         }
         public ICommand WebSiteCommand { get { return new RelayCommand(WebSite); } }
         public async void WebSite()
@@ -392,7 +401,7 @@ namespace FestaMilho.ViewModel
             foreach (var x in L)
             {
                 var prato = new CardapioItemViewModel
-                {
+                   {
                     nomeprato = x.nomeprato,
                     barraca = x.barraca,
                     descricao = x.descricao,

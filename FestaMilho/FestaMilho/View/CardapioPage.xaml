@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FestaMilho.View.CardapioPage"
              xmlns:custom="clr-namespace:FestaMilho.Renderers"
-             Title="Milhosoft Maps"
+             Title="MilhoApp"
              BackgroundColor="{StaticResource BackgroundColor}"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Padding>

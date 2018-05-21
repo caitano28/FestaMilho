@@ -15,7 +15,7 @@
 
         <StackLayout BackgroundColor="{StaticResource MenuColor}" Orientation="Horizontal">
             <Image Source="sobre" HorizontalOptions="Start"  WidthRequest="50" HeightRequest="50" Margin="15,0,0,0"/>
-            <Label Text="Milhosoft Maps" FontSize="20" FontAttributes="Bold" 
+            <Label Text="MilhoApp" FontSize="20" FontAttributes="Bold" 
                    TextColor="{StaticResource TextLabelColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
 

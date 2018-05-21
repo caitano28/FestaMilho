@@ -48,6 +48,7 @@ namespace FestaMilho.Services
 
         private void Logout()
         {
+            App.CurrentUser = new Usuario();
             App.CurrentUser.LembrarSenha = false;
             dataService.DeleteUser(App.CurrentUser);
             App.Navigator = new NavigationPage(new Login())

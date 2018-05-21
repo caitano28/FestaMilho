@@ -11,7 +11,10 @@ namespace FestaMilho.Services
     public class APIService
     {
         public DataService dataService; //acesso ao sq lite
-        public HttpClient client = new HttpClient();
+        public HttpClient client = new HttpClient()
+        {
+            Timeout = TimeSpan.FromMilliseconds(20000)
+        };
         public static readonly string ServidorApi = "http://festadomilho.kibt.com.br"; //ip do backend caso seje local ip da placa de rede
         public APIService()
         {
@@ -22,10 +25,13 @@ namespace FestaMilho.Services
         {
             try
             {
-                client = new HttpClient();
+                //client = new HttpClient();
                 var uri = new Uri(String.Format("{0}/votacao/lista", ServidorApi));
                 var user = dataService.GetUser();
-                client = new HttpClient();
+                client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(20000)
+                };
                 var bearer = String.Format("bearer {0}", user.Token);
                 client.DefaultRequestHeaders.Add("Authorization", bearer);
                 HttpResponseMessage response = null;
@@ -54,10 +60,13 @@ namespace FestaMilho.Services
         {
             try
             {
-                client = new HttpClient();
+               // client = new HttpClient();
                 var uri = new Uri(String.Format("{0}/barraca",ServidorApi));
                 var user = dataService.GetUser();
-                client = new HttpClient();
+                client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(20000)
+                };
                 var bearer = String.Format("bearer {0}", user.Token);
                 client.DefaultRequestHeaders.Add("Authorization", bearer);
                 HttpResponseMessage response = null;
@@ -102,14 +111,17 @@ namespace FestaMilho.Services
         {
             try
             {
+                //client = new HttpClient();
                 var uri = new Uri(String.Format("{0}/cardapio", ServidorApi));
                 var user = dataService.GetUser();
-                client = new HttpClient();
+                client = new HttpClient() {
+                    Timeout = TimeSpan.FromMilliseconds(20000)
+                };
                 var bearer = String.Format("bearer {0}", user.Token);
                 client.DefaultRequestHeaders.Add("Authorization", bearer);
                 HttpResponseMessage response = null;
                 response = await client.GetAsync(uri);
-                var result = await response.Content.ReadAsStringAsync();
+                
                 if (!response.IsSuccessStatusCode)
                 {
                     var list = new List<CardapioReturn>();
@@ -126,6 +138,7 @@ namespace FestaMilho.Services
                     };
 
                 }
+                var result = await response.Content.ReadAsStringAsync();
                 var cardapio = JsonConvert.DeserializeObject<List<CardapioReturn>>(result);
                 return new Response
                 {
@@ -155,7 +168,10 @@ namespace FestaMilho.Services
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
                 var user = dataService.GetUser();
                 var bearer = String.Format("bearer {0}", user.Token);
-                client = new HttpClient();
+                client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(15000)
+                };
                 client.DefaultRequestHeaders.Add("Authorization", bearer);
                 var uri = new Uri(String.Format("{0}/votacao/", ServidorApi));
                 HttpResponseMessage response = null;
@@ -247,7 +263,10 @@ namespace FestaMilho.Services
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
                 var uri = new Uri(String.Format("{0}/auth/autenticacao", ServidorApi));
                 HttpResponseMessage response = null;
-
+                client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(20000)
+                };
                 response = await client.PostAsync(uri, httpContent);
                 var result = await response.Content.ReadAsStringAsync();
                 var error = JsonConvert.DeserializeObject<ObjectError>(result);
@@ -291,7 +310,10 @@ namespace FestaMilho.Services
                 var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
                 var uri = new Uri(String.Format("{0}/auth/recuperasenha", ServidorApi));
                 HttpResponseMessage response = null;
-
+                client = new HttpClient()
+                {
+                    Timeout = TimeSpan.FromMilliseconds(20000)
+                };
                 response = await client.PostAsync(uri, httpContent);
 
                 var result = await response.Content.ReadAsStringAsync();

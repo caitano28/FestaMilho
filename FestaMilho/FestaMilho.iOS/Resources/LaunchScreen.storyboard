@@ -29,7 +29,7 @@
                                 <rect key="frame" x="171" y="521" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milhosoft Maps 2.0" textAlignment="center" lineBreakMode="tailTruncation" id="858" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontSizeToFit="NO" adjustsFontForContentSizeCategory="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MilhoApp 2.0" textAlignment="center" lineBreakMode="tailTruncation" id="858" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" adjustsFontSizeToFit="NO" adjustsFontForContentSizeCategory="YES">
                                 <rect key="frame" x="122" y="572" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15" weight="heavy"/>

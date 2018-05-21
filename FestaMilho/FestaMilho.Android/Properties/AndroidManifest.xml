@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="2.0" package="com.companyname.FestaMilho" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="2.0" package="br.com.Fasipe.MilhoApp" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
-	<application android:label="Milhosoft Maps" android:icon="@drawable/mapa"></application>
+	<application android:label="MilhoApp" android:icon="@drawable/mapa"></application>
 </manifest>
