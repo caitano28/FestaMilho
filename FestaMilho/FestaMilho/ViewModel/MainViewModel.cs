@@ -349,7 +349,7 @@ namespace FestaMilho.ViewModel
         public async void AvaliarBarraca()
         {
             DateNow = DateTime.Now;
-            if (DateNow.Hour >= 13 || DateNow.Hour <= 7)
+            if (DateNow.Hour >= 19 || DateNow.Hour <= 7)
             {
                 AvaliacaoRequest.barraca = CurrentBarraca._id;
                 await navigationXamarin.PushPopupAsync(new VotePage());
