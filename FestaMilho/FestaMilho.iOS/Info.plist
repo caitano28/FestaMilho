@@ -23,7 +23,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Milhosoft Maps</string>
 	<key>CFBundleIdentifier</key>
-	<string>br.com.Fasipe.MilhosoftMaps</string>
+	<string>br.com.Fasipe.MilhoApp</string>
 	<key>CFBundleVersion</key>
 	<string>2.0</string>
 	<key>UILaunchStoryboardName</key>

@@ -217,43 +217,43 @@
     <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 1024x1024.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-1024x1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 120x120.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-120x120.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 152x152px.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-152x152px.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 167x167.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-167x167.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 180x180.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-180x180.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 20x20.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-20x20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 29x29.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-29x29.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 40x40.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-40x40.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 58x58.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-58x58.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 60x60.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-60x60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 76x76.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-76x76.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 80x80.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-80x80.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon 87x87.png">
+    <ImageAsset Include="Media.xcassets\MilhosoftIcons.appiconset\icon-87x87.png">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
