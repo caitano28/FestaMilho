@@ -369,6 +369,16 @@ namespace FestaMilho.ViewModel
             
 
         }
+        public ICommand MaisPratosCommand { get { return new RelayCommand(MaisPratos); } }
+        public async void MaisPratos()
+        {
+            await navigationXamarin.PushPopupAsync(new ListCardapioBarracaPop());
+        }
+        public ICommand MaisBarracasCommand { get { return new RelayCommand(MaisBarracas); } }
+        public async void MaisBarracas()
+        {
+            await navigationXamarin.PushPopupAsync(new ListBarracaPop());
+        }
         public ICommand Avaliar2Command { get { return new RelayCommand(PostAvaliacao); } }
         public async void PostAvaliacao()
         {

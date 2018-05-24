@@ -30,6 +30,8 @@
                        FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                 <Label Text="     Acadêmicos responsáveis pelo código fonte: Atimir Menin, Erik Vaz e Rodrigo C. Costa"
                        FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                <Label Text="     BackEnd do App: Daniel Malagurti"
+                       FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                 <Label Text="     Designer do App: Rodrigo C. Costa"
                        FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
         </StackLayout>

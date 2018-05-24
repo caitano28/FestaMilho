@@ -29,7 +29,7 @@
                 <ListView ItemsSource="{Binding Barracas}" HasUnevenRows="True" HorizontalOptions="Center" 
                           SeparatorVisibility="None" ItemTemplate="{StaticResource BarracasViewCell}" VerticalOptions="FillAndExpand">
                 </ListView>
-
+                <Button Text="+ Mais Barracas" Style="{StaticResource ButtonSecundario}" Command="{Binding MaisBarracasCommand}"/>
             </StackLayout>
 
 

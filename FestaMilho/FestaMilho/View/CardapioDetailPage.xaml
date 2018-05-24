@@ -56,10 +56,10 @@
                        TextColor="{StaticResource TextLabelColor}"/>
                             <Label Text="{Binding periodo}" HorizontalTextAlignment="Center" FontSize="12" 
                        TextColor="{StaticResource TextLabelColor}"/>
-                            <Label Text="Localização:" HorizontalTextAlignment="Center" FontSize="12" 
+                            <Label Text="" HorizontalTextAlignment="Center" FontSize="12" 
                        TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0" IsEnabled="False"/>
                             <Label Text="{Binding localizacao}" HorizontalTextAlignment="Center" FontSize="12" 
-                        x:Name="localizacao" TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0"/>
+                        x:Name="localizacao" TextColor="#EA8610" Margin="5,0,0,0"/>
                         </StackLayout>
                         
 

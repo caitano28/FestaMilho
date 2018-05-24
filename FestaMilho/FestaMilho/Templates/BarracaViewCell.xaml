@@ -27,7 +27,7 @@
             <Label Text="{Binding nome}" FontSize="14" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
                                            HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0"/>
             <Label Text="{Binding curso}" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" 
-                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                           HorizontalOptions="Start" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1"/>
         </Grid>
     </ViewCell.View>
 </ViewCell>

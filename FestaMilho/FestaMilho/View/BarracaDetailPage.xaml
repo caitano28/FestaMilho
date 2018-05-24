@@ -20,19 +20,18 @@
                 <StackLayout   BindingContext="{Binding CurrentBarraca}" VerticalOptions="CenterAndExpand" >
 
                     <Label Text="{Binding nome}" HorizontalTextAlignment="Center" FontSize="16" 
-                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" HorizontalOptions="CenterAndExpand"/>
                     <Label Text="{Binding formapagamento, StringFormat='Formas de Pagamento: {0}'}" HorizontalTextAlignment="Center" FontSize="12" 
-                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}"/>
+                       FontAttributes="Bold" TextColor="{StaticResource TextLabelColor}" HorizontalOptions="CenterAndExpand" />
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Label Text="{Binding curso, StringFormat='Curso: {0},'}" HorizontalTextAlignment="Start" FontSize="12" 
-                       TextColor="{StaticResource TextLabelColor}"/>
-                        <Label Text="{Binding periodo}" HorizontalTextAlignment="Center" FontSize="12" 
-                       TextColor="{StaticResource TextLabelColor}"/>
-                        <Label Text="Localização:" HorizontalTextAlignment="Center" FontSize="12" 
-                       TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0" IsEnabled="False"/>
-                        <Label Text="{Binding localizacao}" HorizontalTextAlignment="Center" FontSize="12" 
-                        x:Name="localizacao" TextColor="{StaticResource TextLabelColor}" Margin="5,0,0,0"/>
+                       TextColor="{StaticResource TextLabelColor}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                        <Label Text="{Binding periodo}" HorizontalTextAlignment="Start" FontSize="12" 
+                       TextColor="{StaticResource TextLabelColor}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                        
+                        <Label Text="{Binding localizacao}" HorizontalTextAlignment="Start" FontSize="12" 
+                        x:Name="localizacao" TextColor="#EA8610" Margin="5,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
                     </StackLayout>
 
 
@@ -57,7 +56,7 @@
                 <ListView ItemsSource="{Binding Cardapios2}" HasUnevenRows="True" HorizontalOptions="Center" 
                            SeparatorVisibility="None" ItemTemplate="{StaticResource CardapiosViewCell}" VerticalOptions="FillAndExpand">
                 </ListView>
-
+                <Button Text="+ Mais Pratos" Style="{StaticResource ButtonSecundario}" Command="{Binding MaisPratosCommand}"/>
             </StackLayout>
 
 

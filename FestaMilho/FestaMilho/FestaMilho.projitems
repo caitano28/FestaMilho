@@ -91,6 +91,10 @@
       <DependentUpon>ListBarracaPop.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\ListCardapioBarracaPop.xaml.cs">
+      <DependentUpon>ListCardapioBarracaPop.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\ListCardapioPop.xaml.cs">
       <DependentUpon>ListCardapioPop.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -262,6 +266,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\ClassificacaoViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ListCardapioBarracaPop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
