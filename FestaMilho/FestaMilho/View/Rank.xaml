@@ -41,7 +41,7 @@
                           SeparatorVisibility="None" ItemTemplate="{StaticResource ClassificacaoViewCell}"
                           VerticalOptions="FillAndExpand">
                 </ListView>
-
+                <Button Text="+ Mais Barracas" Style="{StaticResource ButtonSecundario}" Command="{Binding MaisBarracasRankCommand}"/>
             </StackLayout>
         </StackLayout>
         

@@ -349,14 +349,14 @@ namespace FestaMilho.ViewModel
         public async void AvaliarBarraca()
         {
             DateNow = DateTime.Now;
-            if (DateNow.Hour >= 19 || DateNow.Hour <= 7)
+            if (DateNow.Hour >= 19 )
             {
                 AvaliacaoRequest.barraca = CurrentBarraca._id;
                 await navigationXamarin.PushPopupAsync(new VotePage());
             }
             else
             {
-                await dialogServices.ShowMessage("Aviso", "Você só pode avaliar uma Barraca das 19 Hrs até as 7 da manhã! " + DateNow.ToString());
+                await dialogServices.ShowMessage("Aviso", "Você só pode avaliar uma Barraca das 19 Hrs até as 00 Hrs! " + DateNow.ToString());
             }
            
            // 
@@ -378,6 +378,11 @@ namespace FestaMilho.ViewModel
         public async void MaisBarracas()
         {
             await navigationXamarin.PushPopupAsync(new ListBarracaPop());
+        }
+        public ICommand MaisBarracasRankCommand { get { return new RelayCommand(MaisBarracasRank); } }
+        public async void MaisBarracasRank()
+        {
+            await navigationXamarin.PushPopupAsync(new RankPop());
         }
         public ICommand Avaliar2Command { get { return new RelayCommand(PostAvaliacao); } }
         public async void PostAvaliacao()
