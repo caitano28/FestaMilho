@@ -356,7 +356,7 @@ namespace FestaMilho.ViewModel
             }
             else
             {
-                await dialogServices.ShowMessage("Aviso", "Você só pode avaliar uma Barraca das 19 Hrs até as 7 da manhã! " + DateNow.ToString());
+                await dialogServices.ShowMessage("Aviso", "Você só pode avaliar uma Barraca das 19 Hrs até as 00 Hrs! " + DateNow.ToString());
             }
            
            // 
